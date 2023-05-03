@@ -7,7 +7,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-print("Current working directory:", os.getcwd())
+#commented out the line below this because my folder structure is different
 # os.chdir('Surveys')
 
 
