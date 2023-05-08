@@ -1,0 +1,41 @@
+h3{
+  font-family:helvetica;
+  color: black;
+}
+
+/* style for the navigation menu links */
+
+.menu-link {
+    font-family: helvetica;
+    color: black !important;
+    text-decoration: none;
+  }
+  
+h3 a {
+    text-decoration: none;
+    color: black !important;
+  }
+  
+.menu-link h3 u {
+    text-decoration: none;
+  }
+
+.menu-link h3 a:visited,
+.menu-link a:link{
+    color: black !important;
+  }
+/* style for the survey (form) */
+input[type=text], input[type=submit], button[type=submit] { 
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color:rgb(255, 255, 255);
+  }
+
+.container {
+    padding: 20px;
+    background-color: #f1f1f1;
+  }

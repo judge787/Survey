@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="stylesheet.css">
+<title>Survey</title>
+</head>
+<body>
+
+<div id="page" style="width:800px;">
+
+  <div id="header">
+    <br>
+    <pre><h1 style="font-family:helvetica;color:black;margin-top:50;">AIR              Atmospheric Innovations Research Lab</h1></pre>
+  </div>
+  <div id="menu" style="font-family:helvetica;color:black;width:180px;height:1000px;float:left;margin-right:20;">
+    <h3 class="menu-link"><a href="index.html">Home</a></h3>
+    <h3 class="menu-link"><a href="facilities.html">Facilities</a></h3>
+    <h3 class="menu-link"><a href="publications.html">Publications</a></h3>
+    <h3 class="menu-link"><a href="survey.html"><u>Survey</u></a></h3>
+    <h3 class="menu-link"><a href="teaching.html">Teaching</a></h3>
+    <h3 class="menu-link"><a href="links.html">Links</a></h3>
+    <h3 class="menu-link"><a href="group.html">Group</a></h3>
+    <h3 class="menu-link"><a href="positions.html">Positions</a></h3>
+    <h3 class="menu-link"><a href="funding.html">Funding</a></h3>
+    <h3 class="menu-link"><a href="sponsors.html">Sponsors</a></h3>
+    <h3 class="menu-link"><a href="news.html">News</a></h3>
+    <h3 class="menu-link"><a href="contact.html">Contact</a></h3>
+  
+  <!-- <div id="menu" style="font-family:helvetica;color:black;width:180px;height:1000px;float:left;margin-right:20;">
+    <h3 class="menu-link"><a href="index.html">Home</a></h3>
+    <h3 class="menu-link"><u>Facilities</u></h3>
+    <h3 class="menu-link"><a href="publications.html">Publications</a></h3>
+    <h3 class="menu-link"><a href="survey.html">Survey</a></h3>
+    <h3 class="menu-link"><a href="teaching.html">Teaching</a></h3>
+    <h3 class="menu-link"><a href="links.html">Links</a></h3>
+    <h3 class="menu-link"><a href="group.html">Group</a></h3>
+    <h3 class="menu-link"><a href="positions.html">Positions</a></h3>
+    <h3 class="menu-link"><a href="funding.html">Funding</a></h3>
+    <h3 class="menu-link"><a href="sponsors.html">Sponsors</a></h3>
+    <h3 class="menu-link"><a href="news.html">News</a></h3>
+    <h3 class="menu-link"><a href="contact.html">Contact</a></h3> -->
+
+    <!-- <h3><a href="index.html" style="font-family:helvetica;color:black;text-decoration:none;">Home</a></h3>
+    <h3 style="font-family:helvetica;color:black;"><u>Facilities</u></h3>
+    <h3><a href="publications.html" style="font-family:helvetica;color:black;text-decoration:none;">Publications</a></h3>
+    <h3><a href="survey.html" style="font-family:helvetica;color:black;text-decoration:none;">Survey</a></h3>
+    <h3><a href="teaching.html" style="font-family:helvetica;color:black;text-decoration:none;">Teaching</a></h3>
+    <h3><a href="links.html" style="font-family:helvetica;color:black;text-decoration:none;">Links</a></h3>
+    <h3><a href="group.html" style="font-family:helvetica;color:black;text-decoration:none;">Group</a></h3>
+    <h3><a href="positions.html" style="font-family:helvetica;color:black;text-decoration:none;">Positions</a></h3>
+    <h3><a href="funding.html" style="font-family:helvetica;color:black;text-decoration:none;">Funding</a></h3>
+    <h3><a href="sponsors.html" style="font-family:helvetica;color:black;text-decoration:none;">Sponsors</a></h3>
+    <h3><a href="news.html" style="font-family:helvetica;color:black;text-decoration:none;">News</a></h3>
+    <h3><a href="contact.html" style="font-family:helvetica;color:black;text-decoration:none;">Contact</a></h3> -->
+  </div> 
+
+  <div id="content" style="width:600px;float:left;">
+
+    <h3 style="font-family:helvetica;color:black;">Residential Home Energy Consumption Survey</h3>
+
+    <p style="font-family:helvetica;color:black;text-align:left;"> 
+        Did you know that buildings are responsible for 40% of global energy use?<br>
+    <br>
+    <img src="../Figures/OppositeHouseNarrow.jpg" width="600"/>
+    <br>  
+    <p>Figure 1: Opposite House, designed by Atelier RZLBD, Toronto, Canada</p>
+    <br> 
+    In an effort to combat climate change, this survey attempts to collect data for academic research on
+    building energy consumption in Canada and the United States. Data will be used to understand build-
+    ing performance, develop prediction and design models, and lead innovation to reduce building energy
+    consumption. By participation in this survey, your privacy will be protected. To protect individuals
+    data, information will be collected as anonymous and only reported in aggregate form, i.e. by combining
+    large sets of data. This study is organized by Amir A. from Environmental Engineering at the
+    University of Guelph. Please complete this form and email it to aliabadi@uoguelph.ca. To access the
+    form visit:
+    </p>
+    
+    <br><br>
+www.aaa-scientists.com/ResidentialHomeEnergyConsumptionSurvey.pdf
+<br><br>
+<img src="../figures/AIR Logo Text.jpg" width="200"/>
+<br><br><br>
+
+<!-- start the survey here -->
+<div class="container">
+<section>
+  <form>
+    <h3>1. Basic Information About Your Residential Homes</h3>
+    
+    <input> Q1. Your postal code (Example: N1G 1X9 or 02119):</p>
+  </form>
+
+  <!-- Add the file upload form here -->
+  <form action="{{ url_for('upload_file') }}" method="POST" enctype="multipart/form-data">
+    <label for="file">Choose file to upload:</label>
+    <input type="file" id="file" name="file">
+    <br><br>
+    <input type="submit" value="Submit">
+  </form>
+</section>
+</div>
+
+<!-- ... -->
+</div>
+</div>
+</body>
+</html>
