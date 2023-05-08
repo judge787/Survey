@@ -40,8 +40,8 @@ input[type=text] {
   margin: 4px 10px;
   display: inline-block;
   border: 1px solid #ccc;
-  box-sizing: border-box
-  background-color:rgb(255, 255, 255);
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255);
 }
 
 /* used to automatically adjust the size of the input field and the accompaning text */
@@ -53,6 +53,7 @@ input[type=text] {
 
 label {
   flex: 1 0 auto; /* take up as much space as necessary */
+  word-break: break-all;
 }
 
 input {
