@@ -148,19 +148,25 @@ www.aaa-scientists.com/ResidentialHomeEnergyConsumptionSurvey.pdf
     <!-- <div class="adjust-size">
     <label for="q2">Q2. Type of your residential home: (Example: detached, semi-detached, townhouse, apartment, etc.): </label>
     </div> -->
-
-
   </form>
 
 
   <h3>2. Natural Gas or Other Fuel Consumption Data</h3>
-  <!-- Add the file upload form here -->
+  <div class="adjust-size">
+  <label>Q14. Upload a excel file</label> 
   <form action="{{ url_for('upload_file') }}" method="POST" enctype="multipart/form-data">
     <label for="file">Choose file to upload:</label>
     <input type="file" id="file" name="file">
     <br><br>
-    <input type="submit" value="Submit">
+  
+    <!-- <input type="submit" value="Submit"> -->
   </form>
+</div>
+  <label>OR fill in the table below of your bills for the past 12 months to indicate your natural gas (or other fuel) consumption. Note: the entries below can be populated by referring to your natural gas (or other fuel) bills (e.g. Figure 2 below). Please fill up to 12 entries. It is recommended to consider bills for at least 1 full year of natural gas (of other fuel) consumption. Your bills should come from the utility company in your region, such as Enbridge. If you have consumption data for less than 1 full year, that is still fine.</label>
+  <img src="../figures/EnbridgeBill.png" width="500"/>
+  <p>Figure 2: Sample natural gas bill with billing period (May 10, 2021 - Jun 10, 2021) and consumption (100.17 m3) boxed in red</p>
+  <!-- Add the file upload form here -->
+  
 </section>
 </div>
 

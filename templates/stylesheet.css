@@ -66,6 +66,10 @@ form {
   flex-wrap: wrap;
 }
 
+.container {
+  padding: 20px;
+  background-color: #f1f1f1;
+}
 
  input[type=submit], button[type=submit] { 
     width: 100%;
@@ -85,7 +89,6 @@ input[type=text], select {
   box-sizing: border-box;
   background-color: rgb(255, 255, 255);
 }
-
 
 /* used to automatically adjust the size of the input field and the accompaning text */
 .adjust-size{ 
@@ -113,7 +116,3 @@ input, select {
 
 
 
-.container {
-    padding: 20px;
-    background-color: #f1f1f1;
-  }
