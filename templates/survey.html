@@ -55,7 +55,6 @@
     <h3><a href="news.html" style="font-family:helvetica;color:black;text-decoration:none;">News</a></h3>
     <h3><a href="contact.html" style="font-family:helvetica;color:black;text-decoration:none;">Contact</a></h3> -->
   </div> 
-
   <div id="content" style="width:600px;float:left;">
 
     <h3 style="font-family:helvetica;color:black;">Residential Home Energy Consumption Survey</h3>
@@ -106,7 +105,58 @@ www.aaa-scientists.com/ResidentialHomeEnergyConsumptionSurvey.pdf
         <option value="other">Other</option>
       </select>
     </div>
+
+      <div class="adjust-size" id="q2-other" style="display: none;">
+        <label for="q2-other-input">Other:</label>
+        <input type="text" id="q2-other-input" name="q2">
+      </div>
+      
+      <script>
+      var q2Select = document.getElementById("q2-select");
+      var q2OtherDiv = document.getElementById("q2-other");
+
+      q2Select.addEventListener("change", function() {
+        if (q2Select.value == "other") {
+          q2OtherDiv.style.display = "flex";
+          document.getElementById("q2-other-input").setAttribute("name", "q2-other");
+        } else {
+          q2OtherDiv.style.display = "none";
+          document.getElementById("q2-other-input").removeAttribute("name");
+        }
+      });
+      </script>
     
+
+    <div class="adjust-size">
+      <label for="q3">Q3. Number of people living in your home:</label>
+      <select id="q3" name="q3">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+    </div>
+
+
+    <div class="adjust-size">
+      <label for="q4">Q4. What is the approximate footprint area of your residential home? For multi-storey buildings, the footprint area is only associated with one storey of the building; please exclude garages, yards, and other spaces that are not heated or cooled:</label>
+      <select id="q4-select" name="q4">
+        <option value="tiny">Tiny: about 50 m&sup2; or 500 ft&sup2;</option>
+        <option value="small">Small: about 100 m&sup2; or 1000 ft&sup2;</option>
+        <option value="medium">Medium: about 200 m&sup2; or 2000 ft&sup2;</option>
+        <option value="large">Large: about 300 m&sup2; or 3000 ft&sup2;</option>
+        <option value="supersize">Supersize: about 400 m&sup2; or 4000 ft&sup2;</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    
+
 
 
     <!-- <div class="adjust-size">
@@ -116,6 +166,8 @@ www.aaa-scientists.com/ResidentialHomeEnergyConsumptionSurvey.pdf
 
   </form>
 
+
+  <h3>2. Natural Gas or Other Fuel Consumption Data</h3>
   <!-- Add the file upload form here -->
   <form action="{{ url_for('upload_file') }}" method="POST" enctype="multipart/form-data">
     <label for="file">Choose file to upload:</label>
