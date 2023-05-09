@@ -1,5 +1,5 @@
 #page {
-  width: 800px;
+  width: 95%;
 }
 
 /* text styling */
@@ -55,7 +55,8 @@ h3 a {
 /* styling for "content" */
 
 #content{
-  width:600px;
+  padding : 20px;
+  width: 100%;
   float:left;
 
 }
@@ -64,8 +65,14 @@ h3 a {
 form {
   display: flex;
   flex-wrap: wrap;
+  
 }
 
+.container {
+  padding: 20px;
+  background-color: #f1f1f1;
+  overflow: auto;
+}
 
  input[type=submit], button[type=submit] { 
     width: 100%;
@@ -75,6 +82,10 @@ form {
     border: 1px solid #ccc;
     box-sizing: border-box;
     background-color:rgb(255, 255, 255);
+  }
+
+  input[type=submit]:hover {
+    opacity: 0.8;
   }
 /* used to style the input types */
 input[type=text], select {
@@ -86,25 +97,25 @@ input[type=text], select {
   background-color: rgb(255, 255, 255);
 }
 
-
 /* used to automatically adjust the size of the input field and the accompaning text */
 .adjust-size{ 
   display: flex;
+  width: 100%;
   flex-direction: row;
   align-items: center;
 }
+
 
 label {
   flex: 1 0 auto; /* take up as much space as necessary */
   display: inline-flex;
   flex-direction: column;
-  margin-bottom: 1rem;
+  
   /* flex-basis: 70%; */
   /* flex-shrink: 0; */
   /* padding-right: 10px; */
 
 }
-
 input, select {
   flex: 1 1 auto; /* take up remaining space */
   width: 100%; /* fill remaining space */
@@ -113,7 +124,3 @@ input, select {
 
 
 
-.container {
-    padding: 20px;
-    background-color: #f1f1f1;
-  }
