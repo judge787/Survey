@@ -4,7 +4,15 @@
   <title>Read Excel File</title>
 </head>
 <body>
-  <h1>Read Excel File</h1>
+
+  <h1>Convert XLS to JSON</h1>
+  <input type="file" id="xlsFile" />
+  <button onclick="convertToJSON()">Convert to JSON</button>
+  <div id="output"></div>
+  <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+  <script src="myscript.js"></script>
+
+  <!-- <h1>Read Excel File</h1>
   <input type="file" id="excelFile" accept=".xls,.xlsx"/>
   <form id="myForm">
     <label for="name">Name:</label>
@@ -15,6 +23,6 @@
     <input type="number" name="age" id="age" /><br />
   </form>
   <script src="read-excel-file.min.js"></script>
-  <script src="myscript.js"></script>
+  <script src="myscript.js"></script> -->
 </body>
 </html>
