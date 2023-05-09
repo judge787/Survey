@@ -64,11 +64,13 @@ h3 a {
 form {
   display: flex;
   flex-wrap: wrap;
+  
 }
 
 .container {
   padding: 20px;
   background-color: #f1f1f1;
+  overflow: auto;
 }
 
  input[type=submit], button[type=submit] { 
@@ -101,7 +103,7 @@ label {
   flex: 1 0 auto; /* take up as much space as necessary */
   display: inline-flex;
   flex-direction: column;
-  margin-bottom: 1rem;
+  
   /* flex-basis: 70%; */
   /* flex-shrink: 0; */
   /* padding-right: 10px; */
