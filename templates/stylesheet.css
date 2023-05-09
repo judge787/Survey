@@ -64,8 +64,14 @@ h3 a {
 form {
   display: flex;
   flex-wrap: wrap;
+  
 }
 
+.container {
+  padding: 20px;
+  background-color: #f1f1f1;
+  overflow: auto;
+}
 
  input[type=submit], button[type=submit] { 
     width: 100%;
@@ -86,7 +92,6 @@ input[type=text], select {
   background-color: rgb(255, 255, 255);
 }
 
-
 /* used to automatically adjust the size of the input field and the accompaning text */
 .adjust-size{ 
   display: flex;
@@ -98,7 +103,7 @@ label {
   flex: 1 0 auto; /* take up as much space as necessary */
   display: inline-flex;
   flex-direction: column;
-  margin-bottom: 1rem;
+  
   /* flex-basis: 70%; */
   /* flex-shrink: 0; */
   /* padding-right: 10px; */
@@ -113,7 +118,3 @@ input, select {
 
 
 
-.container {
-    padding: 20px;
-    background-color: #f1f1f1;
-  }
