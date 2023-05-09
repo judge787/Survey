@@ -8,6 +8,8 @@ function handleFile(e) {
   
   // Function to autofill form fields
   function autofillForm(rows) {
+    // add a for loop to run through rows
+
     var headerRow = rows[0]; // Assuming the first row contains the column headers
     var dataRow = rows[1]; // Assuming the second row contains the data
     var nameIndex = headerRow.indexOf("Name");
