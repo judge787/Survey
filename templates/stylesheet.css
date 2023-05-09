@@ -108,7 +108,9 @@ label {
   /* flex-shrink: 0; */
   /* padding-right: 10px; */
 
+
 }
+
 
 input, select {
   flex: 1 1 auto; /* take up remaining space */
