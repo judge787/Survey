@@ -22,7 +22,7 @@
 //   document.getElementById("excelFile").addEventListener("change", handleFile, false);
   
 
-  // prints the user inputs to a json file and allows the user to download it 
+// prints the user inputs to a json file and allows the user to download it 
   function printUserInputs() {
   var q1 = document.getElementById('q1').value;
   var q2 = document.getElementById('q2').value;
@@ -75,4 +75,22 @@
     document.body.removeChild(downloadLink);
 }
 
+// the code below is responsible for hiding and displaying the "other" input field when users selet "other" from the dropdown menu
+
+
+  // document.addEventListener("DOMContentLoaded", function() { // ensures that the DOM is loaded before the code below is executed
+    
+  //   var q2 = document.getElementById("q2");
+  //   var q2other = document.getElementById("q2other");
+
+  //   q2.addEventListener("change", function() {
+  //     if (q2.value == "other") {
+  //       q2other.style.display = "flex";
+  //       document.getElementById("q2other").setAttribute("name", "q2other");
+  //     } else {
+  //       q2other.style.display = "none";
+  //       document.getElementById("q2other").removeAttribute("name");
+  //     }
+  //   });
+  // });
 
