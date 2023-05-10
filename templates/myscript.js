@@ -1,23 +1,57 @@
-// Function to handle file input change event
-function handleFile(e) {
-    var file = e.target.files[0];
-    readXlsxFile(file).then(function (rows) {
-      autofillForm(rows);
-    });
-  }
+// // Function to handle file input change event
+// function handleFile(e) {
+//     var file = e.target.files[0];
+//     readXlsxFile(file).then(function (rows) {
+//       autofillForm(rows);
+//     });
+//   }
   
-  // Function to autofill form fields
-  function autofillForm(rows) {
-    var headerRow = rows[0]; // Assuming the first row contains the column headers
-    var dataRow = rows[1]; // Assuming the second row contains the data
-    var nameIndex = headerRow.indexOf("Name");
-    var emailIndex = headerRow.indexOf("Email");
-    var ageIndex = headerRow.indexOf("Age");
-    document.getElementById("name").value = dataRow[nameIndex];
-    document.getElementById("email").value = dataRow[emailIndex];
-    document.getElementById("age").value = dataRow[ageIndex];
-  }
+//   // Function to autofill form fields
+//   function autofillForm(rows) {
+//     var headerRow = rows[0]; // Assuming the first row contains the column headers
+//     var dataRow = rows[1]; // Assuming the second row contains the data
+//     var nameIndex = headerRow.indexOf("Name");
+//     var emailIndex = headerRow.indexOf("Email");
+//     var ageIndex = headerRow.indexOf("Age");
+//     document.getElementById("name").value = dataRow[nameIndex];
+//     document.getElementById("email").value = dataRow[emailIndex];
+//     document.getElementById("age").value = dataRow[ageIndex];
+//   }
   
-  // Bind the handleFile function to file input change event
-  document.getElementById("excelFile").addEventListener("change", handleFile, false);
+//   // Bind the handleFile function to file input change event
+//   document.getElementById("excelFile").addEventListener("change", handleFile, false);
+  
+
+  // function to store user inputs
+  function printUserInputs() {
+    var formData = {
+      q1: document.getElementById('q1').value,
+      q2: document.getElementById('q2').value,
+      q2other: document.getElementById('q2other').value,
+      q3: document.getElementById('q3').value,
+      q4: document.getElementById('q4').value,
+      q5: document.getElementById('q5').value,
+      // heatingSystem: document.getElementById('heating-system').value,
+    };
+  
+    alert(JSON.stringify(formData, null, 2));
+    console.log(formData);
+  
+    // Convert formData to JSON string
+    var jsonData = JSON.stringify(formData, null, 1);
+  
+    // Create a Blob with the JSON data and specify the MIME type as 'application/json'
+    var blob = new Blob([jsonData], { type: 'application/json' });
+  
+    // Create an anchor element to add the download attribute
+    var downloadLink = document.createElement('a');
+    downloadLink.download = 'formData.json'; // Set the file name
+    downloadLink.href = URL.createObjectURL(blob); // Create a URL for the Blob
+    downloadLink.style.display = 'none'; // Hide the link element
+  
+    // Add the download link to the DOM, click it, and remove it afterward
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+  }
   
