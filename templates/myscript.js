@@ -23,7 +23,7 @@
   
 
 // prints the user inputs to a json file and allows the user to download it 
-  function printUserInputs() {
+function printUserInputs() {
   var q1 = document.getElementById('q1').value;
   var q2 = document.getElementById('q2').value;
   var q2other = document.getElementById('q2other-input').value;
@@ -31,19 +31,41 @@
   var q4 = document.getElementById('q4').value;
   var q4other = document.getElementById('q4other-input').value;
   var q5 = document.getElementById('q5').value;
+  var q5other = document.getElementById('q5other-input').value;
+  var q6 = document.getElementById('q6').value; 
+  var q6other = document.getElementById('q6other-input').value;
+  var q7 = document.getElementById('q7').value;
+  var q7other = document.getElementById('q7other-input').value;
+  var q8 = document.getElementById('q8').value;
+  var q8other = document.getElementById('q8other-input').value;
+  var q9 = document.getElementById('q9').value;
+  var q9other = document.getElementById('q9other-input').value;
+
   // var heatingSystem = document.getElementById('heating-system').value;
 
-  console.log("Before if statement: q2 =", q2, "\nq2other =", q2other);
+  
+
+
+
+  // function handleOtherInput(questionValue, otherInputValue) {
+  //   if (questionValue === 'other') {
+  //     return otherInputValue;
+  //   }
+  //   return questionValue;
+  // }
+console.log("Before if statement: q2 =", q2, "\nq2other =", q2other);
   if (q2 == 'other') {
     q2 = q2other;
   }
-  console.log("After if statement: q2 =", q2);
+console.log("After if statement: q2 =", q2);
 
-  console.log("Before if statement: q4 =", q4, "\nq4other =", q4other);
   if (q4 == 'other') {
     q4 = q4other;
   }
-  console.log("After if statement: q4 =", q4);
+
+  // console.log("Before if statement: q2 =", q2, "\nq2other =", q2other);
+  // console.log("After if statement: q2 =", q2);
+  
   
   var formData = {
     q1: q1,
@@ -76,21 +98,41 @@
 }
 
 // the code below is responsible for hiding and displaying the "other" input field when users selet "other" from the dropdown menu
+//it automates this: 
+                                                                                                                                                  // var q2 = document.getElementById("q2");
+                                                                                                                                                  // var q2other = document.getElementById("q2other");
+                                                                                                                                                  // q2.addEventListener("change", function() {
+                                                                                                                                                  //   if (q2.value == "other") {
+                                                                                                                                                  //     q2other.style.display = "flex";
+                                                                                                                                                  //     document.getElementById("q2other").setAttribute("name", "q2other");
+                                                                                                                                                  //   } else {
+                                                                                                                                                  //     q2other.style.display = "none";
+                                                                                                                                                  //     document.getElementById("q2other").removeAttribute("name");
+                                                                                                                                                  //   }
+                                                                                                                                                  // });
+      
 
-
-  // document.addEventListener("DOMContentLoaded", function() { // ensures that the DOM is loaded before the code below is executed
-    
-  //   var q2 = document.getElementById("q2");
-  //   var q2other = document.getElementById("q2other");
-
-  //   q2.addEventListener("change", function() {
-  //     if (q2.value == "other") {
-  //       q2other.style.display = "flex";
-  //       document.getElementById("q2other").setAttribute("name", "q2other");
-  //     } else {
-  //       q2other.style.display = "none";
-  //       document.getElementById("q2other").removeAttribute("name");
-  //     }
-  //   });
-  // });
-
+  function handleOtherOption(selectId, otherInputId) {
+    var selectElement = document.getElementById(selectId);
+    var otherInputElement = document.getElementById(otherInputId).parentNode;
+  
+    selectElement.addEventListener("change", function () {
+      if (selectElement.value == "other") {
+        otherInputElement.style.display = "flex";
+        document.getElementById(otherInputId).setAttribute("name", otherInputId);
+      } else {
+        otherInputElement.style.display = "none";
+        document.getElementById(otherInputId).removeAttribute("name");
+      }
+    });
+  }
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    handleOtherOption("q2", "q2other-input");
+    handleOtherOption("q4", "q4other-input");
+    handleOtherOption("q5", "q5other-input");
+    handleOtherOption("q6", "q6other-input");
+    handleOtherOption("q7", "q7other-input");
+    handleOtherOption("q8", "q8other-input");
+    handleOtherOption("q9", "q9other-input");
+  });

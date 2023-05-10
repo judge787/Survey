@@ -86,21 +86,6 @@
           <input type="text" id="q2other-input" name="q2other">
         </div>
         
-        <!-- <script>
-        var q2 = document.getElementById("q2");
-        var q2other = document.getElementById("q2other");
-        
-        q2.addEventListener("change", function() {
-          if (q2.value == "other") {
-            q2other.style.display = "flex";
-            document.getElementById("q2other").setAttribute("name", "q2other");
-          } else {
-            q2other.style.display = "none";
-            document.getElementById("q2other").removeAttribute("name");
-          }
-        });
-        </script> -->
-
         <div class="adjust-size">
           <label for="q3">Q3. Number of people living in your home:</label>
           <select id="q3" name="q3">
@@ -135,6 +120,7 @@
           <input type="text" id="q4other-input" name="q4other">
         </div>
 
+
         <div class="adjust-size" style="word-wrap: break-word;">
           <label for="q5">Q5. How many storeys in your residential home are heated and/or cooled?</label>
           <select id="q5" name="q5">
@@ -147,6 +133,12 @@
           </select>
         </div>
 
+        <div class="adjust-size" id="q5other" style="display: none;">
+          <label for="q5other-input">Other:</label>
+          <input type="text" id="q5other-input" name="q5other">
+        </div>
+
+        
         <div class="adjust-size" style="word-wrap: break-word;">
           <label for="q6">Q6. Type of space heating system:</label>
           <select id="q6" name="q6">
@@ -158,6 +150,12 @@
           </select>
         </div>
 
+        <div class="adjust-size" id="q6other" style="display: none;">
+          <label for="q6other-input">Other:</label>
+          <input type="text" id="q6other-input" name="q6other">
+        </div>
+        
+
         <div class="adjust-size" style="word-wrap: break-word;">
           <label for="q7">Q7. Type of space cooling system:</label>
           <select id="q7" name="q7">
@@ -168,6 +166,12 @@
           </select>
         </div>
 
+        <div class="adjust-size" id="q7other" style="display: none;">
+          <label for="q7other-input">Other:</label>
+          <input type="text" id="q7other-input" name="q7other">
+        </div>
+        
+
         <div class="adjust-size">
           <label for="q8">Q8. Type of water heating system:</label>
           <select id="q8" name="q8">
@@ -177,6 +181,12 @@
             <option value="other">Other</option>
           </select>
         </div>
+
+        <div class="adjust-size" id="q8other" style="display: none;">
+          <label for="q8other-input">Other:</label>
+          <input type="text" id="q8other-input" name="q8other">
+        </div>
+        
         
         <div class="adjust-size" style="word-wrap: break-word;">
           <label for="q9">Q9. Type of stove/oven system:</label>
@@ -187,6 +197,12 @@
             <option value="other">Other</option>
           </select>
         </div>
+
+        <div class="adjust-size" id="q9other" style="display: none;">
+          <label for="q9other-input">Other:</label>
+          <input type="text" id="q9other-input" name="q9other">
+        </div>
+        
 
         <div class="adjust-size">
           <label>Q10. Which one of the uncommon devices below depend on substantial amount of energy in your home (choose as many as may apply)?</label>
@@ -449,7 +465,7 @@
           <input type="text" id="q14l7" name="q14l7">
         </div>
 
-
+        
         <h3>3 Electricity Consumption Data</h3>
         <p>fill the table below to indicate my electricity consumption. Note: the entries below can be populated by referring to your electricity bills (e.g. Figure 3 below). Please fill up to 12 entries. It is recommended to consider bills for at least 1 full year of electricity consumption. Your bills should come from the utility company in your region, such as Toronto Hydro. If you have consumption data for less than 1 full year, that is still fine.</p> <br>
         <!-- !important, im not sure if i want to add any of the figures, we might just replace it with a short video instead at the end of the page -->
@@ -659,7 +675,7 @@
           <input type="text" id="q15l7" name="q15l7">
         </div>
 
-        <script>
+        <!-- <script>
           function handleOtherOption(selectId, otherInputId) {
             var selectElement = document.getElementById(selectId);
             var otherInputElement = document.getElementById(otherInputId).parentNode;
@@ -680,7 +696,7 @@
             handleOtherOption("q4", "q4other-input");
           });
         
-          </script>
+          </script> -->
         
         <button type="submit" id="button">Submit</button>
         <!-- <input type="submit" value="Submit"> -->
