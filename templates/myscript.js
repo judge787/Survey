@@ -22,19 +22,31 @@
 //   document.getElementById("excelFile").addEventListener("change", handleFile, false);
   
 
-  // function to store user inputs
   function printUserInputs() {
-    var formData = {
-      q1: document.getElementById('q1').value,
-      q2: document.getElementById('q2').value,
-      q2other: document.getElementById('q2other').value,
-      q3: document.getElementById('q3').value,
-      q4: document.getElementById('q4').value,
-      q5: document.getElementById('q5').value,
-      // heatingSystem: document.getElementById('heating-system').value,
-    };
+  var q1 = document.getElementById('q1').value;
+  var q2 = document.getElementById('q2').value;
+  var q2other = document.getElementById('q2other').value;
+  var q3 = document.getElementById('q3').value;
+  var q4 = document.getElementById('q4').value;
+  var q5 = document.getElementById('q5').value;
+  // var heatingSystem = document.getElementById('heating-system').value;
+
+  console.log("Before if statement: q2 =", q2, "q2other =", q2other);
+  if (q2 == 'other') {
+    q2 = q2other;
+  }
+  console.log("After if statement: q2 =", q2);
   
-    alert(JSON.stringify(formData, null, 2));
+  var formData = {
+    q1: q1,
+    q2: q2,
+    q3: q3,
+    q4: q4,
+    q5: q5,
+    // heatingSystem: heatingSystem,
+  };
+
+   alert(JSON.stringify(formData, null, 2));
     console.log(formData);
   
     // Convert formData to JSON string
@@ -53,5 +65,6 @@
     document.body.appendChild(downloadLink);
     downloadLink.click();
     document.body.removeChild(downloadLink);
-  }
-  
+}
+
+
