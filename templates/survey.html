@@ -81,8 +81,8 @@
         </div>
         
         <div class="adjust-size" id="q2other" style="display: none;">
-          <label for="q2other">Other:</label>
-          <input type="text" id="q2other" name="q2other">
+          <label for="q2other-input">Other:</label>
+          <input type="text" id="q2other-input" name="q2other">
         </div>
         
         <script>
@@ -128,6 +128,26 @@
             <option value="other">Other</option>
           </select>
         </div>
+
+        <div class="adjust-size" id="q4other" style="display: none;">
+          <label for="q4other-input">Other:</label>
+          <input type="text" id="q4other-input" name="q4other">
+        </div>
+        
+        <script>
+        var q4 = document.getElementById("q4");
+        var q4other = document.getElementById("q4other");
+        
+        q4.addEventListener("change", function() {
+          if (q4.value == "other") {
+            q4other.style.display = "flex";
+            document.getElementById("q4other-input").setAttribute("name", "q4other");
+          } else {
+            q4other.style.display = "none";
+            document.getElementById("q4other-input").removeAttribute("name");
+          }
+        });
+        </script>
         
 
         <div class="adjust-size" style="word-wrap: break-word;">

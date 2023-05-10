@@ -22,20 +22,28 @@
 //   document.getElementById("excelFile").addEventListener("change", handleFile, false);
   
 
+  // prints the user inputs to a json file and allows the user to download it 
   function printUserInputs() {
   var q1 = document.getElementById('q1').value;
   var q2 = document.getElementById('q2').value;
-  var q2other = document.getElementById('q2other').value;
+  var q2other = document.getElementById('q2other-input').value;
   var q3 = document.getElementById('q3').value;
   var q4 = document.getElementById('q4').value;
+  var q4other = document.getElementById('q4other-input').value;
   var q5 = document.getElementById('q5').value;
   // var heatingSystem = document.getElementById('heating-system').value;
 
-  console.log("Before if statement: q2 =", q2, "q2other =", q2other);
+  console.log("Before if statement: q2 =", q2, "\nq2other =", q2other);
   if (q2 == 'other') {
     q2 = q2other;
   }
   console.log("After if statement: q2 =", q2);
+
+  console.log("Before if statement: q4 =", q4, "\nq4other =", q4other);
+  if (q4 == 'other') {
+    q4 = q4other;
+  }
+  console.log("After if statement: q4 =", q4);
   
   var formData = {
     q1: q1,
