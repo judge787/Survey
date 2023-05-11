@@ -40,31 +40,36 @@ function printUserInputs() {
   var q8other = document.getElementById('q8other-input').value;
   var q9 = document.getElementById('q9').value;
   var q9other = document.getElementById('q9other-input').value;
+ 
 
-  // var heatingSystem = document.getElementById('heating-system').value;
+  //
+  function logOtherInputHandling(questionId, questionValue, otherInputValue) {
+    
+    console.log(`Before if statement: ${questionId} =`, questionValue, `\n${questionId}other =`, otherInputValue);
+    if (questionValue === 'other' && otherInputValue !== '') {
+      questionValue = otherInputValue;
+    }
+    console.log(`After if statement: ${questionId} =`, questionValue);
 
+    return questionValue;
+  }
+  
+  q2 = logOtherInputHandling('q2', q2, q2other);
+  q4 = logOtherInputHandling('q4', q4, q4other);
+  q5 = logOtherInputHandling('q5', q5, q5other);
+  q6 = logOtherInputHandling('q6', q6, q6other);
+  q7 = logOtherInputHandling('q7', q7, q7other);
+  q8 = logOtherInputHandling('q8', q8, q8other);
+  q9 = logOtherInputHandling('q9', q9, q9other);
   
 
 
+// console.log("Before if statement: q2 =", q2, "\nq2other =", q2other);
+//   if (q2 == 'other') {
+//     q2 = q2other;
+//   }
+// console.log("After if statement: q2 =", q2);
 
-  // function handleOtherInput(questionValue, otherInputValue) {
-  //   if (questionValue === 'other') {
-  //     return otherInputValue;
-  //   }
-  //   return questionValue;
-  // }
-console.log("Before if statement: q2 =", q2, "\nq2other =", q2other);
-  if (q2 == 'other') {
-    q2 = q2other;
-  }
-console.log("After if statement: q2 =", q2);
-
-  if (q4 == 'other') {
-    q4 = q4other;
-  }
-
-  // console.log("Before if statement: q2 =", q2, "\nq2other =", q2other);
-  // console.log("After if statement: q2 =", q2);
   
   
   var formData = {
@@ -73,7 +78,11 @@ console.log("After if statement: q2 =", q2);
     q3: q3,
     q4: q4,
     q5: q5,
-    // heatingSystem: heatingSystem,
+    q6: q6,
+    q7: q7,
+    q8: q8,
+    q9: q9,
+   
   };
 
    alert(JSON.stringify(formData, null, 2));
