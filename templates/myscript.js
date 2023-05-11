@@ -10,65 +10,65 @@ function readExcelAndAutofill() {
     // Checks worksheet and cell A1 to check what is contained in it
     var cellA1 = worksheet.A1 ? worksheet.A1.v : "";
 
-    // var cellData1 = {};
-    // var blocks = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'];
-    // var rows = [1, 2, 3, 4, 5, 6, 7];
+    var cellData1 = {};
+    var blocks = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'];
+    var rows = [1, 2, 3, 4, 5, 6, 7];
     
-    // for (var block of blocks) {
+    for (var block of blocks) {
       
-    //   for (var row of rows) {
-    //     var cellBase = worksheet['E' + 2].v;
-    //     var cellDataKeyBase = 'q14' + block + row;
+      for (var row of rows) {
+        var cellBase = worksheet['E' + 2].v;
+        var cellDataKeyBase = 'q14' + block + row;
     
-    //     cellData1[cellDataKeyBase] = extractYear(cellBase);
-    //     cellData1[cellDataKeyBase] = extractMonth(cellBase);
-    //     cellData1[cellDataKeyBase] = extractDay(cellBase);
+        cellData1[cellDataKeyBase] = extractYear(cellBase);
+        cellData1[cellDataKeyBase] = extractMonth(cellBase);
+        cellData1[cellDataKeyBase] = extractDay(cellBase);
     
-    //     var cellBase2 = worksheet['F' + 2].v;
-    //     cellData1[cellDataKeyBase] = extractYear(cellBase2);
-    //     cellData1[cellDataKeyBase] = extractMonth(cellBase2);
-    //     cellData1[cellDataKeyBase] = extractDay(cellBase2);
+        var cellBase2 = worksheet['F' + 2].v;
+        cellData1[cellDataKeyBase] = extractYear(cellBase2);
+        cellData1[cellDataKeyBase] = extractMonth(cellBase2);
+        cellData1[cellDataKeyBase] = extractDay(cellBase2);
     
-    //     cellData1[cellDataKeyBase] = worksheet['J' + 2].v;
-    //   }
-    // }
-    var cellData1 = {
-      // Block 1
-      q14a1: extractYear(worksheet.E2.v),
-      q14a2: extractMonth(worksheet.E2.v),
-      q14a3: extractDay(worksheet.E2.v),
-      q14a4: extractYear(worksheet.F2.v),
-      q14a5: extractMonth(worksheet.F2.v),
-      q14a6: extractDay(worksheet.F2.v),
-      q14a7: worksheet.J2.v,
+        cellData1[cellDataKeyBase] = worksheet['J' + 2].v;
+      }
+    }
+    // var cellData1 = {
+    //   // Block 1
+    //   q14a1: extractYear(worksheet.E2.v),
+    //   q14a2: extractMonth(worksheet.E2.v),
+    //   q14a3: extractDay(worksheet.E2.v),
+    //   q14a4: extractYear(worksheet.F2.v),
+    //   q14a5: extractMonth(worksheet.F2.v),
+    //   q14a6: extractDay(worksheet.F2.v),
+    //   q14a7: worksheet.J2.v,
       
-      q14b1: extractYear(worksheet.E3.v),
-      q14b2: extractMonth(worksheet.E3.v),
-      q14b3: extractDay(worksheet.E3.v),
-      q14b4: extractYear(worksheet.F3.v),
-      q14b5: extractMonth(worksheet.F3.v),
-      q14b6: extractDay(worksheet.F3.v),
-      q14b7: worksheet.J3.v, 
+    //   q14b1: extractYear(worksheet.E3.v),
+    //   q14b2: extractMonth(worksheet.E3.v),
+    //   q14b3: extractDay(worksheet.E3.v),
+    //   q14b4: extractYear(worksheet.F3.v),
+    //   q14b5: extractMonth(worksheet.F3.v),
+    //   q14b6: extractDay(worksheet.F3.v),
+    //   q14b7: worksheet.J3.v, 
 
-      q14c1: extractYear(worksheet.E4.v),
-      q14c2: extractMonth(worksheet.E4.v),
-      q14c3: extractDay(worksheet.E4.v),
-      q14c4: extractYear(worksheet.F4.v),
-      q14c5: extractMonth(worksheet.F4.v),
-      q14c6: extractDay(worksheet.F4.v),
-      q14c7: worksheet.J4.v, 
+    //   q14c1: extractYear(worksheet.E4.v),
+    //   q14c2: extractMonth(worksheet.E4.v),
+    //   q14c3: extractDay(worksheet.E4.v),
+    //   q14c4: extractYear(worksheet.F4.v),
+    //   q14c5: extractMonth(worksheet.F4.v),
+    //   q14c6: extractDay(worksheet.F4.v),
+    //   q14c7: worksheet.J4.v, 
 
-      q14d1: "b" + 1,
-      q14d7: worksheet.J5.v,  
-      q14e7: worksheet.J6.v,  
-      q14f7: worksheet.J7.v,  
-      q14g7: worksheet.J8.v,  
-      q14h7: worksheet.J9.v,  
-      q14i7: worksheet.J10.v,  
-      q14j7: worksheet.J11.v,  
-      q14k7: worksheet.J12.v
-      // Add more cells as needed
-    };
+    //   q14d1: "b" + 1,
+    //   q14d7: worksheet.J5.v,  
+    //   q14e7: worksheet.J6.v,  
+    //   q14f7: worksheet.J7.v,  
+    //   q14g7: worksheet.J8.v,  
+    //   q14h7: worksheet.J9.v,  
+    //   q14i7: worksheet.J10.v,  
+    //   q14j7: worksheet.J11.v,  
+    //   q14k7: worksheet.J12.v
+    //   // Add more cells as needed
+    // };
 
     var cellData2 = {
       q14a1: worksheet.C1 ? worksheet.C1.v : "",

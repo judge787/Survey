@@ -5,12 +5,35 @@
 </head>
 <body>
 
+  <input type="file" id="excelFile" />
+  <div class="adjust-size">
+    <label for="q14a1">Bill 01: Start YYYY</label>
+    <input type="text" id="q14a1" name="q14a1">
+    <label for="q14a2">MM</label>
+    <input type="text" id="q14a2" name="q14a2">
+    <label for="q14a3">DD</label>
+    <input type="text" id="q14a3" name="q14a3">
+    <label for="q14a4">End YYYY</label>
+    <input type="text" id="q14a4" name="q14a4">
+    <label for="q14a5">MM</label>
+    <input type="text" id="q14a5" name="q14a5">
+    <label for="q14a6">DD</label>
+    <input type="text" id="q14a6" name="q14a6">
+    <label for="q14a7">Consumption m^3</label>
+    <input type="text" id="q14a7" name="q14a7">
+  </div>
+
+  <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+  <script src="myscript.js"></script>
+
+
+<!-- Try number 2 JSON
   <h1>Convert XLS to JSON</h1>
   <input type="file" id="xlsFile" />
   <button onclick="convertToJSON()">Convert to JSON</button>
   <div id="output"></div>
-  <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
-  <script src="myscript.js"></script>
+  <script src="xlsx.full.min.js"></script>
+  <script src="myscript.js"></script> -->
 
   <!-- <h1>Read Excel File</h1>
   <input type="file" id="excelFile" accept=".xls,.xlsx"/>
