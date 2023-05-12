@@ -40,7 +40,9 @@ function printUserInputs() {
   var q8other = document.getElementById('q8other-input').value;
   var q9 = document.getElementById('q9').value;
   var q9other = document.getElementById('q9other-input').value;
-
+  // var q11 = document.getElementById('q11').value;
+  // var q12 = document.getElementById('q12').value;
+  var q16 = document.getElementById('q16').value;
   
   var q14a1 = document.getElementById('q14a1').value;
   var q14a2 = document.getElementById('q14a2').value;
@@ -131,6 +133,7 @@ function printUserInputs() {
 
   var q14a = [q14a1, q14a2, q14a3, q14a4, q14a5, q14a6, q14a7].join(', ');
 
+  
   //
   function logOtherInputHandling(questionId, questionValue, otherInputValue) {
     
@@ -172,8 +175,11 @@ function printUserInputs() {
     q8: q8,
     q9: q9,
 
+   
 
     q14a: q14a,
+
+    q16: q16,
    
   };
 
