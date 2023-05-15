@@ -1,12 +1,14 @@
-function readExcelAndAutofill() {
-  var fileInput = document.getElementById("excelFile");
+// Read all excel cells and assign them to input ids
+function readExcelAndAutofill(event) {
+  var fileInput = event.target;
   var file = fileInput.files[0];
   var reader = new FileReader();
   reader.onload = function (e) {
     var data = new Uint8Array(e.target.result);
     var workbook = XLSX.read(data, { type: "array" });
-    var worksheet = workbook.Sheets[workbook.SheetNames[0]];
+    var worksheet = workbook.Sheets[workbook.SheetNames[0]]; // Choose first workbook sheet in excel
 
+    // If else statements to figure out which bill your working with
     if (worksheet.A1 ? worksheet.A1.v : "" == "Account Number") { // Enbridge Bill
       var cellData = {
         q14a1: extractYear(worksheet.E2.v),
@@ -103,100 +105,100 @@ function readExcelAndAutofill() {
         q15a1: extractYear(worksheet.A8.v),
         q15a2: extractMonth(worksheet.A8.v),
         q15a3: "1",
-        q15a4: worksheet.A8.v,
-        q15a5: extractYear(worksheet.A8.v),
+        q15a4: extractYear(worksheet.A8.v),
+        q15a5: extractMonth(worksheet.A8.v),
         q15a6: extractDay(extractMonth(worksheet.A8.v).toString()),
         q15a7: worksheet.B8.v,
 
         q15b1: extractYear(worksheet.A9.v),
         q15b2: extractMonth(worksheet.A9.v),
         q15b3: "1",
-        q15b4: worksheet.A9.v,
-        q15b5: extractYear(worksheet.A9.v),
+        q15b4: extractYear(worksheet.A9.v),
+        q15b5: extractMonth(worksheet.A9.v),
         q15b6: extractDay(extractMonth(worksheet.A9.v).toString()),
         q15b7: worksheet.B9.v,
 
         q15c1: extractYear(worksheet.A10.v),
         q15c2: extractMonth(worksheet.A10.v),
         q15c3: "1",
-        q15c4: worksheet.A10.v,
-        q15c5: extractYear(worksheet.A10.v),
+        q15c4: extractYear(worksheet.A10.v),
+        q15c5: extractMonth(worksheet.A10.v),
         q15c6: extractDay(extractMonth(worksheet.A10.v).toString()),
         q15c7: worksheet.B10.v,
 
         q15d1: extractYear(worksheet.A11.v),
         q15d2: extractMonth(worksheet.A11.v),
         q15d3: "1",
-        q15d4: worksheet.A11.v,
-        q15d5: extractYear(worksheet.A11.v),
+        q15d4: extractYear(worksheet.A11.v),
+        q15d5: extractMonth(worksheet.A11.v),
         q15d6: extractDay(extractMonth(worksheet.A11.v).toString()),
         q15d7: worksheet.B11.v,
         
         q15e1: extractYear(worksheet.A12.v),
         q15e2: extractMonth(worksheet.A12.v),
         q15e3: "1",
-        q15e4: worksheet.A12.v,
-        q15e5: extractYear(worksheet.A12.v),
+        q15e4: extractYear(worksheet.A12.v),
+        q15e5: extractMonth(worksheet.A12.v),
         q15e6: extractDay(extractMonth(worksheet.A12.v).toString()),
         q15e7: worksheet.B12.v,
 
         q15f1: extractYear(worksheet.A13.v),
         q15f2: extractMonth(worksheet.A13.v),
         q15f3: "1",
-        q15f4: worksheet.A13.v,
-        q15f5: extractYear(worksheet.A13.v),
+        q15f4: extractYear(worksheet.A13.v),
+        q15f5: extractMonth(worksheet.A13.v),
         q15f6: extractDay(extractMonth(worksheet.A13.v).toString()),
         q15f7: worksheet.B13.v,
 
         q15g1: extractYear(worksheet.A14.v),
         q15g2: extractMonth(worksheet.A14.v),
         q15g3: "1",
-        q15g4: worksheet.A14.v,
-        q15g5: extractYear(worksheet.A14.v),
+        q15g4: extractYear(worksheet.A14.v),
+        q15g5: extractMonth(worksheet.A14.v),
         q15g6: extractDay(extractMonth(worksheet.A14.v).toString()),
         q15g7: worksheet.B14.v,
         
         q15h1: extractYear(worksheet.A15.v),
         q15h2: extractMonth(worksheet.A15.v),
         q15h3: "1",
-        q15h4: worksheet.A15.v,
-        q15h5: extractYear(worksheet.A15.v),
+        q15h4: extractYear(worksheet.A15.v),
+        q15h5: extractMonth(worksheet.A15.v),
         q15h6: extractDay(extractMonth(worksheet.A15.v).toString()),
         q15h7: worksheet.B15.v,
 
         q15i1: extractYear(worksheet.A16.v),
         q15i2: extractMonth(worksheet.A16.v),
         q15i3: "1",
-        q15i4: worksheet.A16.v,
-        q15i5: extractYear(worksheet.A16.v),
+        q15i4: extractYear(worksheet.A16.v),
+        q15i5: extractMonth(worksheet.A16.v),
         q15i6: extractDay(extractMonth(worksheet.A16.v).toString()),
         q15i7: worksheet.B16.v,
 
         q15j1: extractYear(worksheet.A17.v),
         q15j2: extractMonth(worksheet.A17.v),
         q15j3: "1",
-        q15j4: worksheet.A17.v,
-        q15j5: extractYear(worksheet.A17.v),
+        q15j4: extractYear(worksheet.A17.v),
+        q15j5: extractMonth(worksheet.A17.v),
         q15j6: extractDay(extractMonth(worksheet.A17.v).toString()),
         q15j7: worksheet.B17.v,
 
         q15k1: extractYear(worksheet.A18.v),
         q15k2: extractMonth(worksheet.A18.v),
         q15k3: "1",
-        q15k4: worksheet.A18.v,
-        q15k5: extractYear(worksheet.A18.v),
+        q15k4: extractYear(worksheet.A18.v),
+        q15k5: extractMonth(worksheet.A18.v),
         q15k6: extractDay(extractMonth(worksheet.A18.v).toString()),
         q15k7: worksheet.B18.v,
         
         q15l1: extractYear(worksheet.A19.v),
         q15l2: extractMonth(worksheet.A19.v),
         q15l3: "1",
-        q15l4: worksheet.A19.v,
-        q15l5: extractYear(worksheet.A19.v),
+        q15l4: extractYear(worksheet.A19.v),
+        q15l5: extractMonth(worksheet.A19.v),
         q15l6: extractDay(extractMonth(worksheet.A19.v).toString()),
         q15l7: worksheet.B19.v
       };
-    }
+    } // Add other else if statements if want to be accessible for other bill types
 
 
     autofillInputs(cellData);
@@ -204,6 +206,7 @@ function readExcelAndAutofill() {
   reader.readAsArrayBuffer(file);
 }
 
+// Extract the day from dates
 function extractDay(dateValue) {
   if (typeof dateValue === "string") {
     if (dateValue === "01" || dateValue === "03" || 
@@ -218,11 +221,12 @@ function extractDay(dateValue) {
         return "28"; // for February
     }
   } else {
-    var dateObj = new Date((dateValue) * 24 * 60 * 60 * 1000); // Subtract 1 day to account for Excel's date origin
+    var dateObj = new Date((dateValue) * 24 * 60 * 60 * 1000);
     return dateObj.getDate();
   }
 }
 
+// Extract the month from dates
 function extractMonth(dateValue) {
   if (typeof dateValue === "string") {
     return dateValue.substr(0, 2);
@@ -233,17 +237,17 @@ function extractMonth(dateValue) {
   }
 }
 
+// Extract the year from dates
 function extractYear(dateValue) {
   if (typeof dateValue === "string") {
     return dateValue.substr(3, 7);
   } else {
     var dateObj = new Date((dateValue - 1) * 24 * 60 * 60 * 1000); // Subtract 1 day to account for Excel's date origin
-    var year = dateObj.getFullYear() - 70; // Subtract 70 for some reason
-    return year;
+    return dateObj.getFullYear() - 70; // Subtract 70 for correct date;
   }
 }
 
-
+// Autofill input fields in HTML by iteration
 function autofillInputs(cellData) {
   for (var key in cellData) {
     var input = document.getElementById(key);
