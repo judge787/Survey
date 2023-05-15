@@ -1,56 +1,82 @@
-// // Function to handle file input change event
-// function handleFile(e) {
-//     var file = e.target.files[0];
-//     readXlsxFile(file).then(function (rows) {
-//       autofillForm(rows);
-//     });
-//   }
+document.addEventListener("DOMContentLoaded", function () { //this line ensures that the page is loaded before the script is run
   
-//   // Function to autofill form fields
-//   function autofillForm(rows) {
-//     var headerRow = rows[0]; // Assuming the first row contains the column headers
-//     var dataRow = rows[1]; // Assuming the second row contains the data
-//     var nameIndex = headerRow.indexOf("Name");
-//     var emailIndex = headerRow.indexOf("Email");
-//     var ageIndex = headerRow.indexOf("Age");
-//     document.getElementById("name").value = dataRow[nameIndex];
-//     document.getElementById("email").value = dataRow[emailIndex];
-//     document.getElementById("age").value = dataRow[ageIndex];
-//   }
-  
-//   // Bind the handleFile function to file input change event
-//   document.getElementById("excelFile").addEventListener("change", handleFile, false);
-  
-
- // Function to toggle the visibility of the text for question 13 input
- document.addEventListener("DOMContentLoaded", function() {
- function toggleTextInput(checkboxId, containerId) {
-  const checkbox = document.getElementById(checkboxId);
-  const container = document.getElementById(containerId);
-
-  if (checkbox.checked) {
-    container.style.display = 'flex';
-  } else {
-    container.style.display = 'none';
+  //This portion of the code will handle the automated HTML format for question 13
+  function createCheckboxAndInputPair(index, labelText, checkboxValue) {
+    return `
+      <div class="adjust-size">
+        <label for="q13_${index}">${labelText}</label>
+        <input type="checkbox" id="q13_${index}" name="q13_${index}" value="${checkboxValue}">
+      </div>
+      <div class="adjust-size" id="q13_${index + 1}" style="display: none;">
+        <label for="q13_${index + 1}">Specifics:</label>
+        <input type="text" id="q13_${index + 1}" name="q13_${index + 1}">
+      </div>
+    `;
   }
-}
+  const checkboxAndInputPairs = [
+    {
+      index: 1,
+      labelText: 'My home was air-leak tested and now it is leak-proof',
+      checkboxValue: 'air-leak',
+    },
+    {
+      index: 3,
+      labelText: 'I replaced my windows with energy efficient windows (e.g. double or triple-layer)',
+      checkboxValue: 'energy-efficient windows',
+    },
+    // Add more pairs here
+  ];
+  
+  const container = document.getElementById('checkbox-input-container');
+  container.innerHTML = checkboxAndInputPairs
+    .map(({ index, labelText, checkboxValue }) => createCheckboxAndInputPair(index, labelText, checkboxValue))
+    .join('');
+  
 
-// Add an event listener to the first checkbox
-document.getElementById('q13_1').addEventListener('change', () => {
-  toggleTextInput('q13_1', 'q13_2');
-  toggleTextInput('q13_3', 'q13_4');
-  toggleTextInput('q13_5', 'q13_6');
-  toggleTextInput('q13_7', 'q13_8');
-  toggleTextInput('q13_9', 'q13_10');
-  // toggleTextInput('q13_11', 'q13_12');
-  // toggleTextInput('q13_13', 'q13_14');
-  // toggleTextInput('q13_15', 'q13_16');
-  // toggleTextInput('q13_17', 'q13_18');
-  // toggleTextInput('q13_19', 'q13_20');
+
+
+
+
+
+  function toggleTextInput(checkbox, container) { //this function toggles the text input container based on the checkbox state for question 13
+    if (checkbox.checked) {
+      container.style.display = "flex";
+    } else {
+      container.style.display = "none";
+    }
+  }
+  function addCheckboxListener(checkboxId, containerId) { //this function adds a listener to the checkbox and calls the toggleTextInput function
+    const checkbox = document.getElementById(checkboxId);
+    const container = document.getElementById(containerId);
+
+    // Set the initial state of the text input container based on the checkbox state
+    toggleTextInput(checkbox, container);
+
+    checkbox.addEventListener("change", () => { //this line adds a listener to the checkbox and calls the toggleTextInput function
+      toggleTextInput(checkbox, container);
+    });
+  }
+
+  const checkboxes = [ //this array contains the checkbox and container ids for question 13 (13_1 is the checkbox 13_2 is the text intput for specifics)
+    { checkboxId: "q13_1", containerId: "q13_2" },
+    { checkboxId: "q13_3", containerId: "q13_4" },
+    { checkboxId: "q13_5", containerId: "q13_6" },
+    { checkboxId: "q13_7", containerId: "q13_8" },
+    { checkboxId: "q13_9", containerId: "q13_10" },
+    { checkboxId: "q13_11", containerId: "q13_12" },
+    { checkboxId: "q13_13", containerId: "q13_14" },
+    { checkboxId: "q13_15", containerId: "q13_16" },
+    { checkboxId: "q13_17", containerId: "q13_18" },
+    { checkboxId: "q13_19", containerId: "q13_20" },
+    // Add more pairs here as needed
+  ];
+
+  checkboxes.forEach(({ checkboxId, containerId }) => { 
+    addCheckboxListener(checkboxId, containerId);
+  });
+
 
   
-});
- });
 
 
 
@@ -239,8 +265,7 @@ function printUserInputs() {
     document.body.removeChild(downloadLink);
 }
 
-
-
+});
 // the code below is responsible for hiding and displaying the "other" input field when users selet "other" from the dropdown menu
 //it automates this: 
                                                                                                                                                   // var q2 = document.getElementById("q2");
