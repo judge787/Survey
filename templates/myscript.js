@@ -22,6 +22,38 @@
 //   document.getElementById("excelFile").addEventListener("change", handleFile, false);
   
 
+ // Function to toggle the visibility of the text for question 13 input
+ document.addEventListener("DOMContentLoaded", function() {
+ function toggleTextInput(checkboxId, containerId) {
+  const checkbox = document.getElementById(checkboxId);
+  const container = document.getElementById(containerId);
+
+  if (checkbox.checked) {
+    container.style.display = 'flex';
+  } else {
+    container.style.display = 'none';
+  }
+}
+
+// Add an event listener to the first checkbox
+document.getElementById('q13_1').addEventListener('change', () => {
+  toggleTextInput('q13_1', 'q13_2');
+  toggleTextInput('q13_3', 'q13_4');
+  toggleTextInput('q13_5', 'q13_6');
+  toggleTextInput('q13_7', 'q13_8');
+  toggleTextInput('q13_9', 'q13_10');
+  // toggleTextInput('q13_11', 'q13_12');
+  // toggleTextInput('q13_13', 'q13_14');
+  // toggleTextInput('q13_15', 'q13_16');
+  // toggleTextInput('q13_17', 'q13_18');
+  // toggleTextInput('q13_19', 'q13_20');
+
+  
+});
+ });
+
+
+
 // prints the user inputs to a json file and allows the user to download it 
 function printUserInputs() {
   var q1 = document.getElementById('q1').value;
@@ -134,6 +166,9 @@ function printUserInputs() {
   var q14a = [q14a1, q14a2, q14a3, q14a4, q14a5, q14a6, q14a7].join(', ');
 
   
+
+
+
   //
   function logOtherInputHandling(questionId, questionValue, otherInputValue) {
     
@@ -204,6 +239,8 @@ function printUserInputs() {
     document.body.removeChild(downloadLink);
 }
 
+
+
 // the code below is responsible for hiding and displaying the "other" input field when users selet "other" from the dropdown menu
 //it automates this: 
                                                                                                                                                   // var q2 = document.getElementById("q2");
@@ -218,28 +255,3 @@ function printUserInputs() {
                                                                                                                                                   //   }
                                                                                                                                                   // });
       
-
-  function handleOtherOption(selectId, otherInputId) {
-    var selectElement = document.getElementById(selectId);
-    var otherInputElement = document.getElementById(otherInputId).parentNode;
-  
-    selectElement.addEventListener("change", function () {
-      if (selectElement.value == "other") {
-        otherInputElement.style.display = "flex";
-        document.getElementById(otherInputId).setAttribute("name", otherInputId);
-      } else {
-        otherInputElement.style.display = "none";
-        document.getElementById(otherInputId).removeAttribute("name");
-      }
-    });
-  }
-  
-  document.addEventListener("DOMContentLoaded", function () {
-    handleOtherOption("q2", "q2other-input");
-    handleOtherOption("q4", "q4other-input");
-    handleOtherOption("q5", "q5other-input");
-    handleOtherOption("q6", "q6other-input");
-    handleOtherOption("q7", "q7other-input");
-    handleOtherOption("q8", "q8other-input");
-    handleOtherOption("q9", "q9other-input");
-  });
