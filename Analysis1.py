@@ -229,7 +229,7 @@ Q17127 =int(ff["Q17127"]["/V"])
 
 basic_info={
     "Postal code": [Q11],
-    "Type of residential home": [Q21],
+    "Type of residential home": [Q2_1],
     "Type of residential home (other)": [Q22],
     "Number of people living in home": [Q31],
     "Footprint area of your residential home": [Q41],

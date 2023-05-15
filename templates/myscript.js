@@ -1,15 +1,17 @@
-document.addEventListener("DOMContentLoaded", function () { //this line ensures that the page is loaded before the script is run
-  
-  //This portion of the code will handle the automated HTML format for question 13
+document.addEventListener("DOMContentLoaded", function () {
+
   function createCheckboxAndInputPair(index, labelText, checkboxValue) {
+    const letter = String.fromCharCode(96 + index);
+    const nextLetter = String.fromCharCode(97 + index);
+
     return `
       <div class="adjust-size">
-        <label for="q13_${index}">${labelText}</label>
-        <input type="checkbox" id="q13_${index}" name="q13_${index}" value="${checkboxValue}">
+        <label for="q13${letter}${index}">${labelText}</label>
+        <input type="checkbox" id="q13${letter}${index}" name="q13${letter}${index}" value="${checkboxValue}">
       </div>
-      <div class="adjust-size" id="q13_${index + 1}" style="display: none;">
-        <label for="q13_${index + 1}">Specifics:</label>
-        <input type="text" id="q13_${index + 1}" name="q13_${index + 1}">
+      <div class="adjust-size" id="q13${nextLetter}${index}" style="display: none;">
+        <label for="q13${nextLetter}${index}">Specifics:</label>
+        <input type="text" id="q13${nextLetter}${index}" name="q13${nextLetter}${index}">
       </div>
     `;
   }
@@ -20,105 +22,110 @@ document.addEventListener("DOMContentLoaded", function () { //this line ensures 
       checkboxValue: 'air-leak',
     },
     {
-      index: 3,
+      index: 2,
       labelText: 'I replaced my windows with energy efficient windows (e.g. double or triple-layer)',
       checkboxValue: 'energy-efficient windows',
     },
     {
-      index: 5,
+      index: 3,
       labelText: 'I installed a high efficiency furnace',
       checkboxValue: 'high efficiency furnace',
     },
     {
-      index: 7,
-      labelText: 'I increased the thermal insulation of my building envelop (e.g. increase R-value, foam spray under roof, etc.)r',
+      index: 4,
+      labelText: 'I increased the thermal insulation of my building envelop (e.g. increase R-value, foam spray under roof, etc.)',
       checkboxValue: 'thermal insulation',
     },
     {
-      index: 9,
+      index: 5,
       labelText: 'installed a photovoltaic system',
       checkboxValue: 'photovoltaic system',
     },
     {
-      index: 11,
+      index: 6,
       labelText: 'I installed a heat pump for home heating',
       checkboxValue: 'heat pump',
     },
-    {index: 13,
-     labelText:'I installed a solar thermal collector',
-     checkboxValue:'solar thermal collector', 
+    {
+      index: 7,
+      labelText: 'I installed a solar thermal collector',
+      checkboxValue: 'solar thermal collector',
     },
     {
-     index:15,
-     labelText:'I installed a thermal energy storage system',
-     checkboxValue:'thermal energy storage system',
+      index: 8,
+      labelText: 'I installed a thermal energy storage system',
+      checkboxValue: 'thermal energy storage system',
     },
     {
-    index: 17,
-    labelText: 'I have installed a green roof',
-    checkboxValue: 'green roof',
+      index: 9,
+      labelText: 'I have installed a green roof',
+      checkboxValue: 'green roof',
     },
     {
-    index: 19,
-    labelText: 'I have installed other systems not described above',
-    checboxValue: 'other systems',
+      index: 10,
+      labelText: 'I have installed other systems not described above',
+      checkboxValue: 'other systems',
     }
-     
-
-
-    // Add more pairs here
   ];
-  
+
   const container = document.getElementById('checkbox-input-container');
   container.innerHTML = checkboxAndInputPairs
     .map(({ index, labelText, checkboxValue }) => createCheckboxAndInputPair(index, labelText, checkboxValue))
     .join('');
-  
 
-
-
-
-
-
-  function toggleTextInput(checkbox, container) { //this function toggles the text input container based on the checkbox state for question 13
+  function toggleTextInput(checkbox, container) {
     if (checkbox.checked) {
       container.style.display = "flex";
     } else {
       container.style.display = "none";
     }
   }
-  function addCheckboxListener(checkboxId, containerId) { //this function adds a listener to the checkbox and calls the toggleTextInput function
+
+  function addCheckboxListener(checkboxId, containerId) {
     const checkbox = document.getElementById(checkboxId);
     const container = document.getElementById(containerId);
-
-    // Set the initial state of the text input container based on the checkbox state
+  
     toggleTextInput(checkbox, container);
 
-    checkbox.addEventListener("change", () => { //this line adds a listener to the checkbox and calls the toggleTextInput function
+    checkbox.addEventListener("change", () => {
       toggleTextInput(checkbox, container);
     });
   }
 
-  const checkboxes = [ //this array contains the checkbox and container ids for question 13 (13_1 is the checkbox 13_2 is the text intput for specifics)
-    { checkboxId: "q13_1", containerId: "q13_2" },
-    { checkboxId: "q13_3", containerId: "q13_4" },
-    { checkboxId: "q13_5", containerId: "q13_6" },
-    { checkboxId: "q13_7", containerId: "q13_8" },
-    { checkboxId: "q13_9", containerId: "q13_10" },
-    { checkboxId: "q13_11", containerId: "q13_12" },
-    { checkboxId: "q13_13", containerId: "q13_14" },
-    { checkboxId: "q13_15", containerId: "q13_16" },
-    { checkboxId: "q13_17", containerId: "q13_18" },
-    { checkboxId: "q13_19", containerId: "q13_20" },
-    // Add more pairs here as needed
+
+  const checkboxes = [
+    { checkboxId: "q13a1", containerId: "q13b1" },
+    { checkboxId: "q13b2", containerId: "q13c2" },
+    { checkboxId: "q13c3", containerId: "q13d3" },
+    { checkboxId: "q13d4", containerId: "q13e4" },
+    { checkboxId: "q13e5", containerId: "q13f5" },
+    { checkboxId: "q13f6", containerId: "q13g6" },
+    { checkboxId: "q13g7", containerId: "q13h7" },
+    { checkboxId: "q13h8", containerId: "q13i8" },
+    { checkboxId: "q13i9", containerId: "q13j9" },
+    { checkboxId: "q13j10", containerId: "q13k10" },
   ];
-
-  checkboxes.forEach(({ checkboxId, containerId }) => { 
-    addCheckboxListener(checkboxId, containerId);
-  });
-
-
   
+  // const checkboxes = [
+  //   { checkboxId: "q13a1", containerId: "q13a2" },
+  //   { checkboxId: "q13b1", containerId: "q13b2" },
+  //   { checkboxId: "q13c1", containerId: "q13c2" },
+  //   { checkboxId: "q13d1", containerId: "q13d2" },
+  //   { checkboxId: "q13e1", containerId: "q13e2" },
+  //   { checkboxId: "q13f1", containerId: "q13f2" },
+  //   { checkboxId: "q13g1", containerId: "q13g2" },
+  //   { checkboxId: "q13h1", containerId: "q13h2" },
+  //   { checkboxId: "q13i1", containerId: "q13i2" },
+  //   { checkboxId: "q13j1", containerId: "q13j2" },
+  // ];
+
+  // Wrap listener registration in a function
+      checkboxes.forEach(({ checkboxId, containerId }) => {
+      addCheckboxListener(checkboxId, containerId);
+    });
+  
+    console.log(checkboxes);
+
 
 
 
