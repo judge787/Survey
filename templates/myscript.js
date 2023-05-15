@@ -34,8 +34,12 @@ document.addEventListener("DOMContentLoaded", function () {
   function toggleTextInput(checkbox, container) {
     if (checkbox.checked) {
       container.style.display = "flex";
+      container.value = "";
+      
     } else {
       container.style.display = "none";
+      container.value = "";
+      
     }
   }
 
@@ -92,10 +96,21 @@ function printUserInputs() {
   // var q11 = document.getElementById('q11').value;
   // var q12 = document.getElementById('q12').value;
 
-  var q13a1 = document.getElementById('q13a1').value;
-  var q13a2 = document.getElementById('q13a2').value;
-  var q13b1 = document.getElementById('q13b1').value;
-  var q13b2 = document.getElementById('q13b2').value;
+  var q13a1 = document.getElementById('q13a1').checked;
+  if (q13a1 == true){
+    var q13a1 = document.getElementById('q13a1').value;
+    var q13a2 = document.getElementById('q13a2').value; }
+
+  var q13b1 = document.getElementById('q13b1').checked;
+  if (q13b1 == true){
+    var q13b1 = document.getElementById('q13b1').value;
+    var q13b2 = document.getElementById('q13b2').value; }
+  
+
+  console.log('q13a1:', q13a1);
+  console.log('q13a2:', q13a2);
+  console.log('q13b1:', q13b1);
+  console.log('q13b2:', q13b2);
 
   var q16 = document.getElementById('q16').value;
   
@@ -189,10 +204,6 @@ function printUserInputs() {
   var q14a = [q14a1, q14a2, q14a3, q14a4, q14a5, q14a6, q14a7].join(', ');
 
   
-
-
-
-  //
   function logOtherInputHandling(questionId, questionValue, otherInputValue) {
     
     console.log(`Before if statement: ${questionId} =`, questionValue, `\n${questionId}other =`, otherInputValue);
@@ -211,7 +222,7 @@ function printUserInputs() {
   q7 = logOtherInputHandling('q7', q7, q7other);
   q8 = logOtherInputHandling('q8', q8, q8other);
   q9 = logOtherInputHandling('q9', q9, q9other);
-  
+
 
 
 // console.log("Before if statement: q2 =", q2, "\nq2other =", q2other);
@@ -265,18 +276,3 @@ function printUserInputs() {
     downloadLink.click();
     document.body.removeChild(downloadLink);
 }
-
-// the code below is responsible for hiding and displaying the "other" input field when users selet "other" from the dropdown menu
-//it automates this: 
-                                                                                                                                                  // var q2 = document.getElementById("q2");
-                                                                                                                                                  // var q2other = document.getElementById("q2other");
-                                                                                                                                                  // q2.addEventListener("change", function() {
-                                                                                                                                                  //   if (q2.value == "other") {
-                                                                                                                                                  //     q2other.style.display = "flex";
-                                                                                                                                                  //     document.getElementById("q2other").setAttribute("name", "q2other");
-                                                                                                                                                  //   } else {
-                                                                                                                                                  //     q2other.style.display = "none";
-                                                                                                                                                  //     document.getElementById("q2other").removeAttribute("name");
-                                                                                                                                                  //   }
-                                                                                                                                                  // });
-      
