@@ -24,6 +24,48 @@ document.addEventListener("DOMContentLoaded", function () { //this line ensures 
       labelText: 'I replaced my windows with energy efficient windows (e.g. double or triple-layer)',
       checkboxValue: 'energy-efficient windows',
     },
+    {
+      index: 5,
+      labelText: 'I installed a high efficiency furnace',
+      checkboxValue: 'high efficiency furnace',
+    },
+    {
+      index: 7,
+      labelText: 'I increased the thermal insulation of my building envelop (e.g. increase R-value, foam spray under roof, etc.)r',
+      checkboxValue: 'thermal insulation',
+    },
+    {
+      index: 9,
+      labelText: 'installed a photovoltaic system',
+      checkboxValue: 'photovoltaic system',
+    },
+    {
+      index: 11,
+      labelText: 'I installed a heat pump for home heating',
+      checkboxValue: 'heat pump',
+    },
+    {index: 13,
+     labelText:'I installed a solar thermal collector',
+     checkboxValue:'solar thermal collector', 
+    },
+    {
+     index:15,
+     labelText:'I installed a thermal energy storage system',
+     checkboxValue:'thermal energy storage system',
+    },
+    {
+    index: 17,
+    labelText: 'I have installed a green roof',
+    checkboxValue: 'green roof',
+    },
+    {
+    index: 19,
+    labelText: 'I have installed other systems not described above',
+    checboxValue: 'other systems',
+    }
+     
+
+
     // Add more pairs here
   ];
   
