@@ -74,7 +74,7 @@ form {
   overflow: auto;
 }
 
- input[type=submit], button[type=submit] { 
+ input[type=submit], button[type=submit], #button { 
     width: 100%;
     padding: 12px;
     margin: 8px 0;
@@ -84,7 +84,7 @@ form {
     background-color:rgb(255, 255, 255);
   }
 
-  input[type=submit]:hover {
+  #button:hover {
     opacity: 0.8;
   }
 /* used to style the input types */
