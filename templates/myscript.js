@@ -1,78 +1,34 @@
-document.addEventListener("DOMContentLoaded", function () {
+let q13a2Value;
+let q13b2Value;
+let q13c2Value;
+let q13d2Value;
+let q13e2Value;
+let q13f2Value;
+let q13g2Value;
+let q13h2Value; 
+let q13i2Value;
+let q13j2Value;
 
-  function createCheckboxAndInputPair(checkboxId, containerId, labelText, checkboxValue) {
-    return `
-      <div class="adjust-size">
-        <label for="${checkboxId}">${labelText}</label>
-        <input type="checkbox" id="${checkboxId}" name="${checkboxId}" value="${checkboxValue}">
-      </div>
-      <div class="adjust-size" id="${containerId}" style="display: none;">
-        <label for="${containerId}">Specifics:</label>
-        <input type="text" id="${containerId}" name="${containerId}">
-      </div>
-    `;
-  }
+document.addEventListener('DOMContentLoaded', function () {
+  const q13a1 = document.getElementById('q13a1');
+  const q13a2 = document.getElementById('q13a2');
 
-  const checkboxAndInputPairs = [
-    { checkboxId: "q13a1", containerId: "q13a2", labelText: 'My home was air-leak tested and now it is leak-proof', checkboxValue: 'air-leak' },
-    { checkboxId: "q13b1", containerId: "q13b2", labelText: 'I replaced my windows with energy efficient windows (e.g. double or triple-layer)', checkboxValue: 'energy-efficient windows' },
-    { checkboxId: "q13c1", containerId: "q13c2", labelText: 'I installed a high efficiency furnace', checkboxValue: 'high efficiency furnace' },
-    { checkboxId: "q13d1", containerId: "q13d2", labelText: 'I increased the thermal insulation of my building envelop (e.g. increase R-value, foam spray under roof, etc.)', checkboxValue: 'thermal insulation' },
-    { checkboxId: "q13e1", containerId: "q13e2", labelText: 'installed a photovoltaic system', checkboxValue: 'photovoltaic system' },
-    { checkboxId: "q13f1", containerId: "q13f2", labelText: 'I installed a heat pump for home heating', checkboxValue: 'heat pump' },
-    { checkboxId: "q13g1", containerId: "q13g2", labelText: 'I installed a solar thermal collector', checkboxValue: 'solar thermal collector' },
-    { checkboxId: "q13h1", containerId: "q13h2", labelText: 'I installed a thermal energy storage system', checkboxValue: 'thermal energy storage system' },
-    { checkboxId: "q13i1", containerId: "q13i2", labelText: 'I have installed a green roof', checkboxValue: 'green roof' },
-    { checkboxId: "q13j1", containerId: "q13j2", labelText: 'I have installed other systems not described above', checkboxValue: 'other systems' }
-  ];
-
-  const container = document.getElementById('checkbox-input-container');
-  container.innerHTML = checkboxAndInputPairs
-    .map(({ checkboxId, containerId, labelText, checkboxValue }) => createCheckboxAndInputPair(checkboxId, containerId, labelText, checkboxValue))
-    .join('');
-
-  function toggleTextInput(checkbox, container) {
-    if (checkbox.checked) {
-      container.style.display = "flex";
-      container.value = "";
-      
+  q13a1.addEventListener('change', function () {
+    if (q13a1.checked) {
+      q13a2.style.display = 'block';
     } else {
-      container.style.display = "none";
-      container.value = "";
-      
+      q13a2.style.display = 'none';
     }
-  }
-
-  function addCheckboxListener(checkboxId, containerId) {
-    const checkbox = document.getElementById(checkboxId);
-    const container = document.getElementById(containerId);
-  
-    toggleTextInput(checkbox, container);
-
-    checkbox.addEventListener("change", () => {
-      toggleTextInput(checkbox, container);
-    });
-  }
-  
-  const checkboxes = [
-
-    { checkboxId: "q13a1", containerId: "q13a2" },
-    { checkboxId: "q13b1", containerId: "q13b2" },
-    { checkboxId: "q13c1", containerId: "q13c2" },
-    { checkboxId: "q13d1", containerId: "q13d2" },
-    { checkboxId: "q13e1", containerId: "q13e2" },
-    { checkboxId: "q13f1", containerId: "q13f2" },
-    { checkboxId: "q13g1", containerId: "q13g2" },
-    { checkboxId: "q13h1", containerId: "q13h2" },
-    { checkboxId: "q13i1", containerId: "q13i2" },
-    { checkboxId: "q13j1", containerId: "q13j2" },
-  ];
-
-  // Wrap listener registration in a function
-      checkboxes.forEach(({ checkboxId, containerId }) => {
-      addCheckboxListener(checkboxId, containerId);
-    });
   });
+  
+  const q13a2Input = document.getElementById('q13a2-input');
+  q13a2Input.addEventListener('input', function () {
+    q13a2Value = q13a2Input.value;
+    console.log(q13a2Value);
+  });
+});
+
+
 
 
 // prints the user inputs to a json file and allows the user to download it 
@@ -93,24 +49,40 @@ function printUserInputs() {
   var q8other = document.getElementById('q8other-input').value;
   var q9 = document.getElementById('q9').value;
   var q9other = document.getElementById('q9other-input').value;
-  // var q11 = document.getElementById('q11').value;
-  // var q12 = document.getElementById('q12').value;
-
-  var q13a1 = document.getElementById('q13a1').checked;
-  if (q13a1 == true){
-    var q13a1 = document.getElementById('q13a1').value;
-    var q13a2 = document.getElementById('q13a2').value; }
-
-  var q13b1 = document.getElementById('q13b1').checked;
-  if (q13b1 == true){
-    var q13b1 = document.getElementById('q13b1').value;
-    var q13b2 = document.getElementById('q13b2').value; }
   
 
-  console.log('q13a1:', q13a1);
-  console.log('q13a2:', q13a2);
-  console.log('q13b1:', q13b1);
-  console.log('q13b2:', q13b2);
+  // var q13a1 = document.getElementById('q13a1').checked;
+  // if (q13a1 == true){
+  //   var q13a1 = document.getElementById('q13a1').value;
+  //   var q13a2 = document.getElementById('q13a2').value; }
+
+  // var q13b1 = document.getElementById('q13b1').checked;
+  // if (q13b1 == true){
+  //   var q13b1 = document.getElementById('q13b1').value;
+  //   var q13b2 = document.getElementById('q13b2').value; }
+
+  // Declare the variables before the if statements
+      // var q13a1 = document.getElementById('q13a1').checked;
+      // var q13a2 = '';
+      // if (q13a1 == true){
+      //     q13a1 = document.getElementById('q13a1').value;
+      //     q13a2 = document.getElementById('q13a2').value; 
+      // }
+
+      var q13a1 = document.getElementById('q13a1').checked;
+      // var q13a2Input = document.getElementById('q13a2-input');
+      
+      // if (q13a1 == true){
+      //     q13a1 = document.getElementById('q13b1').value;
+      //     q13a2Input = document.getElementById('q13b2Input').value; 
+      // }
+
+        
+
+      //   console.log('q13a1:', q13a1);
+      //   console.log('q13a2:', q13a2);
+      //   console.log('q13b1:', q13b1);
+      //   console.log('q13b2:', q13b2);
 
   var q16 = document.getElementById('q16').value;
   
@@ -244,11 +216,13 @@ function printUserInputs() {
     q8: q8,
     q9: q9,
 
+    // q11: q11,
+    // q12: q12,
    
     q13a1: q13a1,
-    q13a2: q13a2,
-    q13b1: q13b1,
-    q13b2: q13b2,
+    q13a2Value: q13a2Value,
+    // q13b1: q13b1,
+    // q13b2: q13b2,
 
     q14a: q14a,
 
