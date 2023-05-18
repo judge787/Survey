@@ -171,6 +171,7 @@ function printUserInputs() {
   // var q14j3 = document.getElementById('q14j3').value;
   // var q14j4 = document.getElementById('q14j4').value;
   // var q14j5 = document.getElementById('q14j5').value;
+  
   // var q14j6 = document.getElementById('q14j6').value;
   // var q14j7 = document.getElementById('q14j7').value;
   // var q14k1 = document.getElementById('q14k1').value;
