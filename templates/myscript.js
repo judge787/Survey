@@ -27,11 +27,6 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log(q13a2Value);
   });
 
-
-
-  const q13b1 = document.getElementById('q13b1');
-  const q13b2 = document.getElementById('q13b2');
-
   q13b1.addEventListener('change', function () {
     if (q13b1.checked) {
       q13b2.style.display = 'block';
@@ -42,11 +37,12 @@ document.addEventListener('DOMContentLoaded', function () {
   
   const q13b2Input = document.getElementById('q13b2-input');
   q13b2Input.addEventListener('input', function () {
-    const q13b2Value = q13b2Input.value;
+    q13b2Value = q13b2Input.value;
     console.log(q13b2Value);
   });
-
 });
+
+
 
 
 // prints the user inputs to a json file and allows the user to download it 
@@ -241,7 +237,8 @@ function printUserInputs() {
     q13a1: q13a1,
     q13a2Value: q13a2Value,
     q13b1: q13b1,
-    q13b2Value: q13b2Value,
+    q13b2Value:  q13b2Value,
+
     // q13b1: q13b1,
     // q13b2: q13b2,
 
