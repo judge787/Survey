@@ -121,6 +121,8 @@ input, select {
   width: 100%; /* fill remaining space */
 }
 
-
+label, a {
+  display: inline;
+}
 
 
