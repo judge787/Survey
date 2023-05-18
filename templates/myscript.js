@@ -254,29 +254,13 @@ function autofillInputs(cellData) {
     if (input) {
       input.value = cellData[key];
     }
-// // Function to handle file input change event
-// function handleFile(e) {
-//     var file = e.target.files[0];
-//     readXlsxFile(file).then(function (rows) {
-//       autofillForm(rows);
-//     });
-//   }
-  
-//   // Function to autofill form fields
-//   function autofillForm(rows) {
-//     var headerRow = rows[0]; // Assuming the first row contains the column headers
-//     var dataRow = rows[1]; // Assuming the second row contains the data
-//     var nameIndex = headerRow.indexOf("Name");
-//     var emailIndex = headerRow.indexOf("Email");
-//     var ageIndex = headerRow.indexOf("Age");
-//     document.getElementById("name").value = dataRow[nameIndex];
-//     document.getElementById("email").value = dataRow[emailIndex];
-//     document.getElementById("age").value = dataRow[ageIndex];
-//   }
-  
-//   // Bind the handleFile function to file input change event
-//   document.getElementById("excelFile").addEventListener("change", handleFile, false);
-  
+  }
+}
+
+// Bind the readExcelAndAutofill function to file input change event
+document.getElementById("excelFile").addEventListener("change", readExcelAndAutofill, false);
+document.getElementById("excelFile2").addEventListener("change", readExcelAndAutofill, false);
+
 
 // prints the user inputs to a json file and allows the user to download it 
 function printUserInputs() {
@@ -406,17 +390,7 @@ function printUserInputs() {
   q7 = logOtherInputHandling('q7', q7, q7other);
   q8 = logOtherInputHandling('q8', q8, q8other);
   q9 = logOtherInputHandling('q9', q9, q9other);
-  
 
-
-// console.log("Before if statement: q2 =", q2, "\nq2other =", q2other);
-//   if (q2 == 'other') {
-//     q2 = q2other;
-//   }
-// console.log("After if statement: q2 =", q2);
-
-  
-  
   var formData = {
     q1: q1,
     q2: q2,
@@ -454,21 +428,10 @@ function printUserInputs() {
     document.body.removeChild(downloadLink);
 }
 
-// the code below is responsible for hiding and displaying the "other" input field when users selet "other" from the dropdown menu
-//it automates this: 
-                                                                                                                                                  // var q2 = document.getElementById("q2");
-                                                                                                                                                  // var q2other = document.getElementById("q2other");
-                                                                                                                                                  // q2.addEventListener("change", function() {
-                                                                                                                                                  //   if (q2.value == "other") {
-                                                                                                                                                  //     q2other.style.display = "flex";
-                                                                                                                                                  //     document.getElementById("q2other").setAttribute("name", "q2other");
-                                                                                                                                                  //   } else {
-                                                                                                                                                  //     q2other.style.display = "none";
-                                                                                                                                                  //     document.getElementById("q2other").removeAttribute("name");
-                                                                                                                                                  //   }
-                                                                                                                                                  // });
-      
 
+
+// the code below is responsible for hiding and displaying the "other" input field when users selet "other" from the dropdown menu
+//it automates this:  
   function handleOtherOption(selectId, otherInputId) {
     var selectElement = document.getElementById(selectId);
     var otherInputElement = document.getElementById(otherInputId).parentNode;
@@ -483,47 +446,7 @@ function printUserInputs() {
       }
     });
   }
-}
 
-// Bind the readExcelAndAutofill function to file input change event
-document.getElementById("excelFile").addEventListener("change", readExcelAndAutofill, false);
-
-
-
-
-// Try number 2 JSON
-// function convertToJSON() {
-//   var fileInput = document.getElementById("xlsFile");
-//   var file = fileInput.files[0];
-//   var reader = new FileReader();
-//   reader.onload = function (e) {
-//     var data = new Uint8Array(e.target.result);
-//     var workbook = XLSX.read(data, { type: "array" });
-//     var worksheet = workbook.Sheets[workbook.SheetNames[0]];
-//     var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
-//     displayOutput(JSON.stringify(jsonData, null, 2));
-//   };
-//   reader.readAsArrayBuffer(file);
-// }
-
-// function displayOutput(jsonData) {
-//   var outputDiv = document.getElementById("output");
-//   outputDiv.innerHTML = "<pre>" + jsonData + "</pre>";
-// }
-
-
-
-
-
-
-// // Function to handle file input change event
-// function handleFile(e) {
-//     var file = e.target.files[0];
-//     readXlsxFile(file).then(function (rows) {
-//       autofillForm(rows);
-//     });
-//   }
-  
   document.addEventListener("DOMContentLoaded", function () {
     handleOtherOption("q2", "q2other-input");
     handleOtherOption("q4", "q4other-input");
@@ -534,4 +457,7 @@ document.getElementById("excelFile").addEventListener("change", readExcelAndAuto
     handleOtherOption("q9", "q9other-input");
   });
 
-document.getElementById("excelFile2").addEventListener("change", readExcelAndAutofill, false);
+
+
+  // Test email
+  
