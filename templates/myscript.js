@@ -149,9 +149,15 @@ function printUserInputs() {
 //     q2 = q2other;
 //   }
 // console.log("After if statement: q2 =", q2);
-
-  
-  
+  q13a2Value = "";
+  if (document.getElementById('q13a1').checked == true){
+    q13a2Value = getElementById('q13a2Value').value;
+  }
+  q13b2Value = "";
+  if (document.getElementById('q13b1').checked == true){
+    q13b2Value = getElementById('q13b2Value').value;
+  }
+ 
   var formData = {
     q1: q1,
     q2: q2,
