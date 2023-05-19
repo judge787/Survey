@@ -56,7 +56,7 @@ h3 a {
 
 #content{
   padding : 20px;
-  width: 82%;
+  max-width: 82%;
   float:left;
 
 }

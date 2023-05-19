@@ -9,7 +9,7 @@ function readExcelAndAutofill(event) {
     var data = new Uint8Array(e.target.result);
     var workbook = XLSX.read(data, { type: "array" });
     var worksheet = workbook.Sheets[workbook.SheetNames[0]]; // Choose first workbook sheet in excel
-
+    
     // If else statements to figure out which bill your working with
     if (worksheet.A1 ? worksheet.A1.v : "" == "Account Number") { // Enbridge Bill
       var cellData = {
@@ -432,7 +432,7 @@ document.addEventListener('DOMContentLoaded', function () {
 // prints the user inputs to a json file and allows the user to download it 
 function printUserInputs() {
 //stores the user input in the variables
-  var q1 = document.getElementById('q1').value;
+  var q1 = document.getElementById('q1').value || "nan";
   var q2 = document.getElementById('q2').value;
   var q2other = document.getElementById('q2other-input').value;
   var q3 = document.getElementById('q3').value;
@@ -453,7 +453,8 @@ function printUserInputs() {
   var q10b = document.getElementById('q10b').checked ? 'Fire place powered by natural gas' : 'nan';
   var q10c = document.getElementById('q10c').checked ? 'Swimming pool, sauna, etc.' : 'nan';
   var q10d = document.getElementById('q10d').checked ? 'No uncommon devices' : 'nan';
-  var q10e = document.getElementById('q10e').value;
+  var q10e = document.getElementById('q10e').value || "nan";
+  
   var q10 = [q10a, q10b, q10c, q10d, q10e].join(', '); //joins the values of the checked boxes and the value of the text box
 
   var q11 = document.getElementById('q11').value;
@@ -470,25 +471,67 @@ function printUserInputs() {
   var q13i1 = document.getElementById('q13i1').checked ? 'I have installed a green roof' : 'nan';
   var q13j1 = document.getElementById('q13j1').checked ? 'I have installed other systems not described above' : 'nan';
   var q13 = [q13a1, q13a2Value, q13b1, q13b2Value, q13c1, q13c2Value, q13d1, q13d2Value, q13e1, q13e2Value, q13f1, q13f2Value, q13g1, q13g2Value, q13h1, q13h2Value, q13i1, q13i2Value, q13j1, q13j2Value].join(', ');
+   
+  q14a1 = document.getElementById('q14a1').value || "nan"; q14a2 = document.getElementById('q14a2').value || "nan"; q14a3 = document.getElementById('q14a3').value || "nan"; q14a4 = document.getElementById('q14a4').value || "nan"; q14a5 = document.getElementById('q14a5').value || "nan"; q14a6 = document.getElementById('q14a6').value || "nan"; q14a7 = document.getElementById('q14a7').value || "nan";
+  q14b1 = document.getElementById('q14b1').value || "nan"; q14b2 = document.getElementById('q14b2').value || "nan"; q14b3 = document.getElementById('q14b3').value || "nan"; q14b4 = document.getElementById('q14b4').value || "nan"; q14b5 = document.getElementById('q14b5').value || "nan"; q14b6 = document.getElementById('q14b6').value || "nan"; q14b7 = document.getElementById('q14b7').value || "nan";
+  q14c1 = document.getElementById('q14c1').value || "nan"; q14c2 = document.getElementById('q14c2').value || "nan"; q14c3 = document.getElementById('q14c3').value || "nan"; q14c4 = document.getElementById('q14c4').value || "nan"; q14c5 = document.getElementById('q14c5').value || "nan"; q14c6 = document.getElementById('q14c6').value || "nan"; q14c7 = document.getElementById('q14c7').value || "nan";
+  q14d1 = document.getElementById('q14d1').value || "nan"; q14d2 = document.getElementById('q14d2').value || "nan"; q14d3 = document.getElementById('q14d3').value || "nan"; q14d4 = document.getElementById('q14d4').value || "nan"; q14d5 = document.getElementById('q14d5').value || "nan"; q14d6 = document.getElementById('q14d6').value || "nan"; q14d7 = document.getElementById('q14d7').value || "nan";
+  q14e1 = document.getElementById('q14e1').value || "nan"; q14e2 = document.getElementById('q14e2').value || "nan"; q14e3 = document.getElementById('q14e3').value || "nan"; q14e4 = document.getElementById('q14e4').value || "nan"; q14e5 = document.getElementById('q14e5').value || "nan"; q14e6 = document.getElementById('q14e6').value || "nan"; q14e7 = document.getElementById('q14e7').value || "nan";
+  q14f1 = document.getElementById('q14f1').value || "nan"; q14f2 = document.getElementById('q14f2').value || "nan"; q14f3 = document.getElementById('q14f3').value || "nan"; q14f4 = document.getElementById('q14f4').value || "nan"; q14f5 = document.getElementById('q14f5').value || "nan"; q14f6 = document.getElementById('q14f6').value || "nan"; q14f7 = document.getElementById('q14f7').value || "nan";
+  q14g1 = document.getElementById('q14g1').value || "nan"; q14g2 = document.getElementById('q14g2').value || "nan"; q14g3 = document.getElementById('q14g3').value || "nan"; q14g4 = document.getElementById('q14g4').value || "nan"; q14g5 = document.getElementById('q14g5').value || "nan"; q14g6 = document.getElementById('q14g6').value || "nan"; q14g7 = document.getElementById('q14g7').value || "nan";
+  q14h1 = document.getElementById('q14h1').value || "nan"; q14h2 = document.getElementById('q14h2').value || "nan"; q14h3 = document.getElementById('q14h3').value || "nan"; q14h4 = document.getElementById('q14h4').value || "nan"; q14h5 = document.getElementById('q14h5').value || "nan"; q14h6 = document.getElementById('q14h6').value || "nan"; q14h7 = document.getElementById('q14h7').value || "nan";
+  q14i1 = document.getElementById('q14i1').value || "nan"; q14i2 = document.getElementById('q14i2').value || "nan"; q14i3 = document.getElementById('q14i3').value || "nan"; q14i4 = document.getElementById('q14i4').value || "nan"; q14i5 = document.getElementById('q14i5').value || "nan"; q14i6 = document.getElementById('q14i6').value || "nan"; q14i7 = document.getElementById('q14i7').value || "nan";
+  q14j1 = document.getElementById('q14j1').value || "nan"; q14j2 = document.getElementById('q14j2').value || "nan"; q14j3 = document.getElementById('q14j3').value || "nan"; q14j4 = document.getElementById('q14j4').value || "nan"; q14j5 = document.getElementById('q14j5').value || "nan"; q14j6 = document.getElementById('q14j6').value || "nan"; q14j7 = document.getElementById('q14j7').value || "nan";
+  q14k1 = document.getElementById('q14k1').value || "nan"; q14k2 = document.getElementById('q14k2').value || "nan"; q14k3 = document.getElementById('q14k3').value || "nan"; q14k4 = document.getElementById('q14k4').value || "nan"; q14k5 = document.getElementById('q14k5').value || "nan"; q14k6 = document.getElementById('q14k6').value || "nan"; q14k7 = document.getElementById('q14k7').value || "nan";
+  q14l1 = document.getElementById('q14l1').value || "nan"; q14l2 = document.getElementById('q14l2').value || "nan"; q14l3 = document.getElementById('q14l3').value || "nan"; q14l4 = document.getElementById('q14l4').value || "nan"; q14l5 = document.getElementById('q14l5').value || "nan"; q14l6 = document.getElementById('q14l6').value || "nan"; q14l7 = document.getElementById('q14l7').value || "nan";
   
+  var q14 = [
+    q14a1, q14a2, q14a3, q14a4, q14a5, q14a6, q14a7,
+    q14b1, q14b2, q14b3, q14b4, q14b5, q14b6, q14b7,
+    q14c1, q14c2, q14c3, q14c4, q14c5, q14c6, q14c7,
+    q14d1, q14d2, q14d3, q14d4, q14d5, q14d6, q14d7,
+    q14e1, q14e2, q14e3, q14e4, q14e5, q14e6, q14e7,
+    q14f1, q14f2, q14f3, q14f4, q14f5, q14f6, q14f7,
+    q14g1, q14g2, q14g3, q14g4, q14g5, q14g6, q14g7,
+    q14h1, q14h2, q14h3, q14h4, q14h5, q14h6, q14h7,
+    q14i1, q14i2, q14i3, q14i4, q14i5, q14i6, q14i7,
+    q14j1, q14j2, q14j3, q14j4, q14j5, q14j6, q14j7,
+    q14k1, q14k2, q14k3, q14k4, q14k5, q14k6, q14k7,
+    q14l1, q14l2, q14l3, q14l4, q14l5, q14l6, q14l7
+  ].join(', ');
+
+  var q15a1 = document.getElementById('q15a1').value || "nan"; var q15a2 = document.getElementById('q15a2').value || "nan"; var q15a3 = document.getElementById('q15a3').value || "nan"; var q15a4 = document.getElementById('q15a4').value || "nan"; var q15a5 = document.getElementById('q15a5').value || "nan"; var q15a6 = document.getElementById('q15a6').value || "nan"; var q15a7 = document.getElementById('q15a7').value || "nan";
+  var q15b1 = document.getElementById('q15b1').value || "nan"; var q15b2 = document.getElementById('q15b2').value || "nan"; var q15b3 = document.getElementById('q15b3').value || "nan"; var q15b4 = document.getElementById('q15b4').value || "nan"; var q15b5 = document.getElementById('q15b5').value || "nan"; var q15b6 = document.getElementById('q15b6').value || "nan"; var q15b7 = document.getElementById('q15b7').value || "nan";
+  var q15c1 = document.getElementById('q15c1').value || "nan"; var q15c2 = document.getElementById('q15c2').value || "nan"; var q15c3 = document.getElementById('q15c3').value || "nan"; var q15c4 = document.getElementById('q15c4').value || "nan"; var q15c5 = document.getElementById('q15c5').value || "nan"; var q15c6 = document.getElementById('q15c6').value || "nan"; var q15c7 = document.getElementById('q15c7').value || "nan";
+  var q15d1 = document.getElementById('q15d1').value || "nan"; var q15d2 = document.getElementById('q15d2').value || "nan"; var q15d3 = document.getElementById('q15d3').value || "nan"; var q15d4 = document.getElementById('q15d4').value || "nan"; var q15d5 = document.getElementById('q15d5').value || "nan"; var q15d6 = document.getElementById('q15d6').value || "nan"; var q15d7 = document.getElementById('q15d7').value || "nan";
+  var q15e1 = document.getElementById('q15e1').value || "nan"; var q15e2 = document.getElementById('q15e2').value || "nan"; var q15e3 = document.getElementById('q15e3').value || "nan"; var q15e4 = document.getElementById('q15e4').value || "nan"; var q15e5 = document.getElementById('q15e5').value || "nan"; var q15e6 = document.getElementById('q15e6').value || "nan"; var q15e7 = document.getElementById('q15e7').value || "nan";
+  var q15f1 = document.getElementById('q15f1').value || "nan"; var q15f2 = document.getElementById('q15f2').value || "nan"; var q15f3 = document.getElementById('q15f3').value || "nan"; var q15f4 = document.getElementById('q15f4').value || "nan"; var q15f5 = document.getElementById('q15f5').value || "nan"; var q15f6 = document.getElementById('q15f6').value || "nan"; var q15f7 = document.getElementById('q15f7').value || "nan";
+  var q15g1 = document.getElementById('q15g1').value || "nan"; var q15g2 = document.getElementById('q15g2').value || "nan"; var q15g3 = document.getElementById('q15g3').value || "nan"; var q15g4 = document.getElementById('q15g4').value || "nan"; var q15g5 = document.getElementById('q15g5').value || "nan"; var q15g6 = document.getElementById('q15g6').value || "nan"; var q15g7 = document.getElementById('q15g7').value || "nan";
+  var q15h1 = document.getElementById('q15h1').value || "nan"; var q15h2 = document.getElementById('q15h2').value || "nan"; var q15h3 = document.getElementById('q15h3').value || "nan"; var q15h4 = document.getElementById('q15h4').value || "nan"; var q15h5 = document.getElementById('q15h5').value || "nan"; var q15h6 = document.getElementById('q15h6').value || "nan"; var q15h7 = document.getElementById('q15h7').value || "nan";
+  var q15i1 = document.getElementById('q15i1').value || "nan"; var q15i2 = document.getElementById('q15i2').value || "nan"; var q15i3 = document.getElementById('q15i3').value || "nan"; var q15i4 = document.getElementById('q15i4').value || "nan"; var q15i5 = document.getElementById('q15i5').value || "nan"; var q15i6 = document.getElementById('q15i6').value || "nan"; var q15i7 = document.getElementById('q15i7').value || "nan";
+  var q15j1 = document.getElementById('q15j1').value || "nan"; var q15j2 = document.getElementById('q15j2').value || "nan"; var q15j3 = document.getElementById('q15j3').value || "nan"; var q15j4 = document.getElementById('q15j4').value || "nan"; var q15j5 = document.getElementById('q15j5').value || "nan"; var q15j6 = document.getElementById('q15j6').value || "nan"; var q15j7 = document.getElementById('q15j7').value || "nan";
+  var q15k1 = document.getElementById('q15k1').value || "nan"; var q15k2 = document.getElementById('q15k2').value || "nan"; var q15k3 = document.getElementById('q15k3').value || "nan"; var q15k4 = document.getElementById('q15k4').value || "nan"; var q15k5 = document.getElementById('q15k5').value || "nan"; var q15k6 = document.getElementById('q15k6').value || "nan"; var q15k7 = document.getElementById('q15k7').value || "nan";
+  var q15l1 = document.getElementById('q15l1').value || "nan"; var q15l2 = document.getElementById('q15l2').value || "nan"; var q15l3 = document.getElementById('q15l3').value || "nan"; var q15l4 = document.getElementById('q15l4').value || "nan"; var q15l5 = document.getElementById('q15l5').value || "nan"; var q15l6 = document.getElementById('q15l6').value || "nan"; var q15l7 = document.getElementById('q15l7').value || "nan";
  
+  var q15 = [
+    q15a1, q15a2, q15a3, q15a4, q15a5, q15a6, q15a7,
+    q15b1, q15b2, q15b3, q15b4, q15b5, q15b6, q15b7,
+    q15c1, q15c2, q15c3, q15c4, q15c5, q15c6, q15c7,
+    q15d1, q15d2, q15d3, q15d4, q15d5, q15d6, q15d7,
+    q15e1, q15e2, q15e3, q15e4, q15e5, q15e6, q15e7,
+    q15f1, q15f2, q15f3, q15f4, q15f5, q15f6, q15f7,
+    q15g1, q15g2, q15g3, q15g4, q15g5, q15g6, q15g7,
+    q15h1, q15h2, q15h3, q15h4, q15h5, q15h6, q15h7,
+    q15i1, q15i2, q15i3, q15i4, q15i5, q15i6, q15i7,
+    q15j1, q15j2, q15j3, q15j4, q15j5, q15j6, q15j7,
+    q15k1, q15k2, q15k3, q15k4, q15k5, q15k6, q15k7,
+    q15l1, q15l2, q15l3, q15l4, q15l5, q15l6, q15l7
+  ].join(', ');
 
-  var q16 = document.getElementById('q16').value;
-  
-  
-  var q14a1 = document.getElementById('q14a1').value;
-  var q14a2 = document.getElementById('q14a2').value;
-  var q14a3 = document.getElementById('q14a3').value;
-  var q14a4 = document.getElementById('q14a4').value;
-  var q14a5 = document.getElementById('q14a5').value;
-  var q14a6 = document.getElementById('q14a6').value;
-  var q14a7 = document.getElementById('q14a7').value;
+  var q16 = document.getElementById('q16').value || "nan";
 
 
 
-  var q14a = [q14a1, q14a2, q14a3, q14a4, q14a5, q14a6, q14a7].join(', ');
-
-  
   function logOtherInputHandling(questionId, questionValue, otherInputValue) {
     
     console.log(`Before if statement: ${questionId} =`, questionValue, `\n${questionId}other =`, otherInputValue);
@@ -532,33 +575,8 @@ function printUserInputs() {
     q11: q11,
     q12: q12,
     q13: q13,
-    // q13a1: q13a1,
-    // q13a2Value: q13a2Value,
-    // q13b1: q13b1,
-    // q13b2Value:  q13b2Value,
-    // q13c1: q13c1,
-    // q13c2Value: q13c2Value,
-    // q13d1: q13d1,
-    // q13d2Value: q13d2Value,
-    // q13e1: q13e1,
-    // q13e2Value: q13e2Value,
-    // q13f1: q13f1,
-    // q13f2Value: q13f2Value,
-    // q13g1: q13g1,
-    // q13g2Value: q13g2Value,
-    // q13h1: q13h1,
-    // q13h2Value: q13h2Value,
-    // q13i1: q13i1,
-    // q13i2Value: q13i2Value,
-    // q13j1: q13j1,
-    // q13j2Value: q13j2Value,
-    
-
-    // q13b1: q13b1,
-    // q13b2: q13b2,
-
-    q14a: q14a,
-
+    q14: q14,
+    q15: q15,
     q16: q16,
    
   };
