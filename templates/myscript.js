@@ -421,14 +421,6 @@ function printUserInputs() {
 //     q2 = q2other;
 //   }
 // console.log("After if statement: q2 =", q2);
-  q13a2Value = "";
-  if (document.getElementById('q13a1').checked == true){
-    q13a2Value = getElementById('q13a2Value').value;
-  }
-  q13b2Value = "";
-  if (document.getElementById('q13b1').checked == true){
-    q13b2Value = getElementById('q13b2Value').value;
-  }
  
   var formData = {
     q1: q1,
@@ -484,3 +476,37 @@ function printUserInputs() {
     downloadLink.click();
     document.body.removeChild(downloadLink);
 }
+
+function handleOtherOption(selectId, otherInputId) {
+  var selectElement = document.getElementById(selectId);
+  var otherInputElement = document.getElementById(otherInputId).parentNode;
+
+  selectElement.addEventListener("change", function () {
+    if (selectElement.value == "other") {
+      otherInputElement.style.display = "flex";
+      document.getElementById(otherInputId).setAttribute("name", otherInputId);
+    } else {
+      otherInputElement.style.display = "none";
+      document.getElementById(otherInputId).removeAttribute("name");
+    }
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  q13a2Value = "";
+  if (document.getElementById('q13a1').checked == true){
+    q13a2Value = document.getElementById('q13a2Value').value;
+  }
+  q13b2Value = "";
+  if (document.getElementById('q13b1').checked == true){
+    q13b2Value = document.getElementById('q13b2Value').value;
+  }
+ 
+  handleOtherOption("q2", "q2other-input");
+  handleOtherOption("q4", "q4other-input");
+  handleOtherOption("q5", "q5other-input");
+  handleOtherOption("q6", "q6other-input");
+  handleOtherOption("q7", "q7other-input");
+  handleOtherOption("q8", "q8other-input");
+  handleOtherOption("q9", "q9other-input");
+});
