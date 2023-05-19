@@ -475,6 +475,7 @@ function printUserInputs() {
 
   var q16 = document.getElementById('q16').value;
   
+  
   var q14a1 = document.getElementById('q14a1').value;
   var q14a2 = document.getElementById('q14a2').value;
   var q14a3 = document.getElementById('q14a3').value;
