@@ -336,7 +336,9 @@ function printUserInputs() {
   var q9 = document.getElementById('q9').value;
   var q9other = document.getElementById('q9other-input').value;
   
-  var q10a = document.getElementById('q10a').checked;
+  // var q10a = document.getElementById('q10a').checked;
+  var q10a = document.getElementById('q10a').checked ? 'Electric car charged by electricity' : '';
+
   var q10b = document.getElementById('q10b').checked;
   var q10c = document.getElementById('q10c').checked;
   var q10d = document.getElementById('q10d').checked;
