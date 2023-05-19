@@ -1,43 +1,44 @@
-import PyPDF2
 import json
-import pandas as pd
 import glob
 import os
-import numpy as np
+# import PyPDF2
+# import json
+import pandas as pd
+# import glob
+# import os
+# import numpy as np
 import matplotlib.pyplot as plt
 
-
-#commented out the line below this because my folder structure is different
 # os.chdir('Surveys')
 
+# files=[x for x in os.listdir() if x.endswith(".pdf")]
+# f = PyPDF2.PdfReader(files[0])
+# ff = f.get_fields()
 
-files=[x for x in os.listdir() if x.endswith(".pdf")]
-f = PyPDF2.PdfReader(files[0])
-ff = f.get_fields()
+files = [x for x in os.listdir() if x.endswith(".json")]
 
-Q11=ff["Q11"]["/V"]
-Q21=ff["Q21"]["/V"]
-Q22=ff["Q22"]["/V"]
-Q31=ff["Q31"]["/V"]
-Q41=ff["Q41"]["/V"]
-Q42=ff["Q42"]["/V"]
-Q51=ff["Q51"]["/V"]
-Q52=ff["Q52"]["/V"]
-Q61=ff["Q61"]["/V"]
-Q62=ff["Q62"]["/V"]
-Q71=ff["Q71"]["/V"]
-Q72=ff["Q72"]["/V"]
-Q81=ff["Q81"]["/V"]
-Q82=ff["Q82"]["/V"]
-Q91=ff["Q91"]["/V"]
-Q92=ff["Q92"]["/V"]
-Q101=ff["Q101"]["/V"]
-Q102=ff["Q102"]["/V"]
-Q103=ff["Q103"]["/V"]
-Q104=ff["Q104"]["/V"]
-Q105=ff["Q105"]["/V"]
-Q111=ff["Q111"]["/V"]
-Q121=ff["Q121"]["/V"]
+with open(files[0], 'r') as file:
+    ff = json.load(file)
+
+# Part 1
+Q1=ff["q1"]
+Q2=ff["q2"]
+Q2_O=ff["q2-other"]
+Q3=ff["q3"]
+Q4=ff["q4"]
+Q5=ff["q5"]
+Q6=ff["q6"]
+Q7=ff["q7"]
+Q8=ff["q8"]
+Q9=ff["q9"]
+Q10A=ff["q10a"]
+Q10B=ff["q10b"]
+Q10C=ff["q10c"]
+Q10D=ff["q10d"]
+Q10E=ff["q10e"]
+
+Q11=ff["q11"]
+Q121=ff["Q121"]
 Q131=ff["Q131"]["/V"]
 Q132=ff["Q132"]["/V"]
 Q133=ff["Q133"]["/V"]     
@@ -58,6 +59,8 @@ Q1317=ff["Q1317"]["/V"]
 Q1318=ff["Q1318"]["/V"]   
 Q1319=ff["Q1319"]["/V"]   
 Q1320=ff["Q1320"]["/V"] 
+
+# Part 2
 Q1511=int(ff["Q1511"]["/V"]   )
 Q1512=int(ff["Q1512"]["/V"]   )
 Q1513=int(ff["Q1513"]["/V"]   )
@@ -142,6 +145,8 @@ Q15124=int(ff["Q15124"]["/V"] )
 Q15125=int(ff["Q15125"]["/V"] )
 Q15126=int(ff["Q15126"]["/V"] )
 Q15127=int(ff["Q15127"]["/V"] )
+
+# Part 3
 Q1711 =int(ff["Q1711"]["/V"]  )
 Q1712 =int(ff["Q1712"]["/V"]  )
 Q1713 =int(ff["Q1713"]["/V"]  )
@@ -227,28 +232,29 @@ Q17125 =int(ff["Q17125"]["/V"])
 Q17126 =int(ff["Q17126"]["/V"])
 Q17127 =int(ff["Q17127"]["/V"])
 
-basic_info={
-    "Postal code": [Q11],
-    "Type of residential home": [Q2_1],
-    "Type of residential home (other)": [Q22],
-    "Number of people living in home": [Q31],
-    "Footprint area of your residential home": [Q41],
+
+basic_info = {
+    "Postal code": [Q1],
+    "Type of residential home": [Q2],
+    "Type of residential home (other)": [Q2_O],
+    "Number of people living in home": [Q3],
+    "Footprint area of your residential home": [Q4],
     "Footprint area of your residential home (other)": [Q42],
-    "Storeys in your residential home are heated and/or cooled": [Q51],
+    "Storeys in your residential home are heated and/or cooled": [Q5],
     "Storeys in your residential home are heated and/or cooled (other)": [Q52],
-    "Type of space heating system": [Q61],
+    "Type of space heating system": [Q6],
     "Type of space heating system (other)": [Q62],
-    "Type of space cooling system:": [Q71],
+    "Type of space cooling system:": [Q7],
     "Type of space cooling system (other):": [Q72],
-    "Type of water heating system": [Q81],
+    "Type of water heating system": [Q8],
     "Type of water heating system (other)": [Q82],
-    "Type of stove/oven system": [Q91],
+    "Type of stove/oven system": [Q9],
     "Type of stove/oven system (other)": [Q92],
-    "Electric car charged by electricity": [Q101],
-    "Fire place powered by natural gas": [Q102],
-    "Swimming pool, sauna, etc.": [Q103],
-    "No uncommon devices": [Q104],
-    "Uncommon devices (other)": [Q105],
+    "Electric car charged by electricity": [Q10A],
+    "Fire place powered by natural gas": [Q10B],
+    "Swimming pool, sauna, etc.": [Q10C],
+    "No uncommon devices": [Q10D],
+    "Uncommon devices (other)": [Q10E],
     "Residential home built year": [Q111],
     "Residential home retrofit year": [Q121],
     "Leak proof": [Q131],
