@@ -261,10 +261,6 @@ function autofillInputs(cellData) {
 
 // Bind the readExcelAndAutofill function to file input change event
 
-
-
-
-
 let q13a2Value;
 let q13b2Value;
 let q13c2Value;
@@ -281,22 +277,13 @@ document.addEventListener('DOMContentLoaded', function () {
   document.getElementById("excelFile").addEventListener("change", readExcelAndAutofill, false);
   document.getElementById("excelFile2").addEventListener("change", readExcelAndAutofill, false);
 
-  //INPUT OUTPUT PART
-  const q13a1 = document.getElementById('q13a1');
-  const q13a2 = document.getElementById('q13a2');
-
+//shows/hides the specific input fields depending on the checkbox
   q13a1.addEventListener('change', function () {
     if (q13a1.checked) {
       q13a2.style.display = 'block';
     } else {
       q13a2.style.display = 'none';
     }
-  });
-  
-  const q13a2Input = document.getElementById('q13a2-input');
-  q13a2Input.addEventListener('input', function () {
-    q13a2Value = q13a2Input.value;
-    console.log(q13a2Value);
   });
 
   q13b1.addEventListener('change', function () {
@@ -306,19 +293,145 @@ document.addEventListener('DOMContentLoaded', function () {
       q13b2.style.display = 'none';
     }
   });
+
+  q13c1.addEventListener('change', function () {
+    if (q13c1.checked) {
+      q13c2.style.display = 'block';
+    } else {
+      q13c2.style.display = 'none';
+    }
+  });
+
+  q13d1.addEventListener('change', function () {
+    if (q13d1.checked) {
+      q13d2.style.display = 'block';
+    } else {
+      q13d2.style.display = 'none';
+    }
+  });
+
+  q13e1.addEventListener('change', function () {
+    if (q13e1.checked) {
+      q13e2.style.display = 'block';
+    } else {
+      q13e2.style.display = 'none';
+    }
+  });
+
+  q13f1.addEventListener('change', function () {
+    if (q13f1.checked) {
+      q13f2.style.display = 'block';
+    } else {
+      q13f2.style.display = 'none';
+    }
+  });
+
+  q13g1.addEventListener('change', function () {
+    if (q13g1.checked) {
+      q13g2.style.display = 'block';
+    } else {
+      q13g2.style.display = 'none';
+    }
+  });
+  
+  q13h1.addEventListener('change', function () {
+    if (q13h1.checked) {
+      q13h2.style.display = 'block';
+    } else {
+      q13h2.style.display = 'none';
+    }
+  });
+
+  q13i1.addEventListener('change', function () {
+    if (q13i1.checked) {
+      q13i2.style.display = 'block';
+    } else {
+      q13i2.style.display = 'none';
+    }
+  });
+
+  q13j1.addEventListener('change', function () {
+    if (q13j1.checked) {
+      q13j2.style.display = 'block';
+    } else {
+      q13j2.style.display = 'none';
+    }
+  });
+
+//stores the user input in the variables q13"*"2Value
+  const q13a2Input = document.getElementById('q13a2-input');
+  q13a2Input.addEventListener('input', function () {
+    q13a2Value = q13a2Input.value;
+    console.log(q13a2Value);
+  });
   
   const q13b2Input = document.getElementById('q13b2-input');
   q13b2Input.addEventListener('input', function () {
     q13b2Value = q13b2Input.value;
     console.log(q13b2Value);
   });
-});
 
+  const q13c2Input = document.getElementById('q13c2-input');
+  q13c2Input.addEventListener('input', function () {
+    q13c2Value = q13c2Input.value;
+    console.log(q13c2Value);
+  }
+  );
 
+  const q13d2Input = document.getElementById('q13d2-input');
+  q13d2Input.addEventListener('input', function () {
+    q13d2Value = q13d2Input.value;
+    console.log(q13d2Value);
+  }
+  );
 
+  const q13e2Input = document.getElementById('q13e2-input');
+  q13e2Input.addEventListener('input', function () {
+    q13e2Value = q13e2Input.value;
+    console.log(q13e2Value);
+  }
+  );
+
+  const q13f2Input = document.getElementById('q13f2-input');
+  q13f2Input.addEventListener('input', function () {
+    q13f2Value = q13f2Input.value;
+    console.log(q13f2Value);
+  }
+  );
+
+  const q13g2Input = document.getElementById('q13g2-input');
+  q13g2Input.addEventListener('input', function () {
+    q13g2Value = q13g2Input.value;
+    console.log(q13g2Value);
+  }
+  );
+
+  const q13h2Input = document.getElementById('q13h2-input');
+  q13h2Input.addEventListener('input', function () {
+    q13h2Value = q13h2Input.value;
+    console.log(q13h2Value);
+  }
+  );
+
+  const q13i2Input = document.getElementById('q13i2-input');
+  q13i2Input.addEventListener('input', function () {
+    q13i2Value = q13i2Input.value;
+    console.log(q13i2Value);
+  }
+  );
+
+  const q13j2Input = document.getElementById('q13j2-input');
+  q13j2Input.addEventListener('input', function () {
+    q13j2Value = q13j2Input.value;
+    console.log(q13j2Value);
+  }
+  );
+
+}); //end of DOMContentLoaded
 
 // prints the user inputs to a json file and allows the user to download it 
 function printUserInputs() {
+//stores the user input in the variables
   var q1 = document.getElementById('q1').value;
   var q2 = document.getElementById('q2').value;
   var q2other = document.getElementById('q2other-input').value;
@@ -336,51 +449,29 @@ function printUserInputs() {
   var q9 = document.getElementById('q9').value;
   var q9other = document.getElementById('q9other-input').value;
   
-  // var q10a = document.getElementById('q10a').checked;
-  var q10a = document.getElementById('q10a').checked ? 'Electric car charged by electricity' : '';
-
-  var q10b = document.getElementById('q10b').checked;
-  var q10c = document.getElementById('q10c').checked;
-  var q10d = document.getElementById('q10d').checked;
+  var q10a = document.getElementById('q10a').checked ? 'Electric car charged by electricity' : 'nan'; //if checked, then the value is the text, else it is nan
+  var q10b = document.getElementById('q10b').checked ? 'Fire place powered by natural gas' : 'nan';
+  var q10c = document.getElementById('q10c').checked ? 'Swimming pool, sauna, etc.' : 'nan';
+  var q10d = document.getElementById('q10d').checked ? 'No uncommon devices' : 'nan';
   var q10e = document.getElementById('q10e').value;
+  var q10 = [q10a, q10b, q10c, q10d, q10e].join(', '); //joins the values of the checked boxes and the value of the text box
 
   var q11 = document.getElementById('q11').value;
   var q12 = document.getElementById('q12').value;
 
-
-  // var q13a1 = document.getElementById('q13a1').checked;
-  // if (q13a1 == true){
-  //   var q13a1 = document.getElementById('q13a1').value;
-  //   var q13a2 = document.getElementById('q13a2').value; }
-
-  // var q13b1 = document.getElementById('q13b1').checked;
-  // if (q13b1 == true){
-  //   var q13b1 = document.getElementById('q13b1').value;
-  //   var q13b2 = document.getElementById('q13b2').value; }
-
-  // Declare the variables before the if statements
-      // var q13a1 = document.getElementById('q13a1').checked;
-      // var q13a2 = '';
-      // if (q13a1 == true){
-      //     q13a1 = document.getElementById('q13a1').value;
-      //     q13a2 = document.getElementById('q13a2').value; 
-      // }
-
-      var q13a1 = document.getElementById('q13a1').checked;
-      var q13b1 = document.getElementById('q13b1').checked;
-      // var q13a2Input = document.getElementById('q13a2-input');
-      
-      // if (q13a1 == true){
-      //     q13a1 = document.getElementById('q13b1').value;
-      //     q13a2Input = document.getElementById('q13b2Input').value; 
-      // }
-
-        
-
-      //   console.log('q13a1:', q13a1);
-      //   console.log('q13a2:', q13a2);
-      //   console.log('q13b1:', q13b1);
-      //   console.log('q13b2:', q13b2);
+  var q13a1 = document.getElementById('q13a1').checked ? 'My home was air-leak was tested and now it is leak-proof' : 'nan'; 
+  var q13b1 = document.getElementById('q13b1').checked ? 'I replaced my windows with energy efficient windows (e.g. double or tripple-layer)' : 'nan';
+  var q13c1 = document.getElementById('q13c1').checked ? 'I installed a high efficiency furnace' : 'nan';
+  var q13d1 = document.getElementById('q13d1').checked ? 'I increased the thermal insulation of my building envelop (e.g. increase R-value, foam spray under roof, etc.)r' : 'nan';
+  var q13e1 = document.getElementById('q13e1').checked ? 'I installed a photovoltaic system' : 'nan';
+  var q13f1 = document.getElementById('q13f1').checked ? 'I installed a heat pump for home heating' : 'nan';
+  var q13g1 = document.getElementById('q13g1').checked ? 'I installed a solar thermal collector' : 'nan';
+  var q13h1 = document.getElementById('q13h1').checked ? 'I installed a thermal energy storage system' : 'nan';
+  var q13i1 = document.getElementById('q13i1').checked ? 'I have installed a green roof' : 'nan';
+  var q13j1 = document.getElementById('q13j1').checked ? 'I have installed other systems not described above' : 'nan';
+  var q13 = [q13a1, q13a2Value, q13b1, q13b2Value, q13c1, q13c2Value, q13d1, q13d2Value, q13e1, q13e2Value, q13f1, q13f2Value, q13g1, q13g2Value, q13h1, q13h2Value, q13i1, q13i2Value, q13j1, q13j2Value].join(', ');
+  
+ 
 
   var q16 = document.getElementById('q16').value;
   
@@ -434,20 +525,33 @@ function printUserInputs() {
     q7: q7,
     q8: q8,
     q9: q9,
-    q10a: q10a,
-    q10b: q10b,
-    q10c: q10c,
-    q10d: q10d,
-    q10e: q10e,
+    q10: q10,
     
 
     q11: q11,
     q12: q12,
-   
-    q13a1: q13a1,
-    q13a2Value: q13a2Value,
-    q13b1: q13b1,
-    q13b2Value:  q13b2Value,
+    q13: q13,
+    // q13a1: q13a1,
+    // q13a2Value: q13a2Value,
+    // q13b1: q13b1,
+    // q13b2Value:  q13b2Value,
+    // q13c1: q13c1,
+    // q13c2Value: q13c2Value,
+    // q13d1: q13d1,
+    // q13d2Value: q13d2Value,
+    // q13e1: q13e1,
+    // q13e2Value: q13e2Value,
+    // q13f1: q13f1,
+    // q13f2Value: q13f2Value,
+    // q13g1: q13g1,
+    // q13g2Value: q13g2Value,
+    // q13h1: q13h1,
+    // q13h2Value: q13h2Value,
+    // q13i1: q13i1,
+    // q13i2Value: q13i2Value,
+    // q13j1: q13j1,
+    // q13j2Value: q13j2Value,
+    
 
     // q13b1: q13b1,
     // q13b2: q13b2,
@@ -495,13 +599,45 @@ function handleOtherOption(selectId, otherInputId) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  q13a2Value = "";
+  q13a2Value = "nan";
   if (document.getElementById('q13a1').checked == true){
     q13a2Value = document.getElementById('q13a2Value').value;
   }
-  q13b2Value = "";
+  q13b2Value = "nan";
   if (document.getElementById('q13b1').checked == true){
     q13b2Value = document.getElementById('q13b2Value').value;
+  }
+  q13c2Value = "nan";
+  if (document.getElementById('q13c1').checked == true){
+    q13c2Value = document.getElementById('q13c2Value').value;
+  }
+  q13d2Value = "nan";
+  if (document.getElementById('q13d1').checked == true){
+    q13d2Value = document.getElementById('q13d2Value').value;
+  }
+  q13e2Value = "nan";
+  if (document.getElementById('q13e1').checked == true){
+    q13e2Value = document.getElementById('q13e2Value').value;
+  }
+  q13f2Value = "nan";
+  if (document.getElementById('q13f1').checked == true){
+    q13f2Value = document.getElementById('q13f2Value').value;
+  }
+  q13g2Value = "nan";
+  if (document.getElementById('q13g1').checked == true){
+    q13g2Value = document.getElementById('q13g2Value').value;
+  }
+  q13h2Value = "nan";
+  if (document.getElementById('q13h1').checked == true){
+    q13h2Value = document.getElementById('q13h2Value').value;
+  }
+  q13i2Value = "nan";
+  if (document.getElementById('q13i1').checked == true){
+    q13i2Value = document.getElementById('q13i2Value').value;
+  }
+  q13j2Value = "nan";
+  if (document.getElementById('q13j1').checked == true){
+    q13j2Value = document.getElementById('q13j2Value').value;
   }
  
   handleOtherOption("q2", "q2other-input");
