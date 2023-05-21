@@ -10,7 +10,6 @@
   <title>Survey</title>
 </head>
 <body>
-
   <div id="page">
     <div id="header">
       <br>
@@ -206,22 +205,16 @@
         <div class="adjust-size">
           <label>Q10. Which one of the uncommon devices below depend on substantial amount of energy in your home (choose as many as may apply)?</label>
         </div>
-        <div class="adjust-size"> 
-          <label for="q10a">Electric car charged by electricity</label>
-          <input type="checkbox" id="q10a" name="uncommon-device" value="electric-car">
-        </div>
-        <div class="adjust-size">
-          <label for="q10b">Fire place powered by natural gas</label>
-          <input type="checkbox" id="q10b" name="uncommon-device" value="fire-place">
-        </div>
-        <div class="adjust-size">
-          <label for="q10c">Swimming pool, sauna, etc.</label>
-          <input type="checkbox" id="q10c" name="uncommon-device" value="swimming-pool">
-        </div>
-        <div class="adjust-size">
-          <label for="q10d">No uncommon devices</label>
-          <input type="checkbox" id="q10d" name="uncommon-device" value="no-uncommon-devices">
-        </div>
+        <div>
+          <label for="q10a"><input type="checkbox" id="q10a" name="uncommon-device" value="electric-car">Electric car charged by electricity</label>
+          <br>
+          <label for="q10b"> <input type="checkbox" id="q10b" name="uncommon-device" value="fire-place">Fire place powered by natural gas</label>
+          <br>
+          <label for="q10c"><input type="checkbox" id="q10c" name="uncommon-device" value="swimming-pool">Swimming pool, sauna, etc.</label>
+          <br>
+          <label for="q10d"> <input type="checkbox" id="q10d" name="uncommon-device" value="no-uncommon-devices">No uncommon devices</label>
+        </div>        
+    
         <div class="adjust-size"> 
           <label for="q10e">Other:</label>
           <input type="text" id="q10e" name="other-uncommon-devices">
@@ -257,22 +250,17 @@
 
         <!-- starting redo for q13, the automation gave me way too many problems -->
 
-        <div class = "adjust-size">
-          <label for = "q13a1">My home was air-leak was tested and now it is leak-proof</label>
-          <input type = "checkbox" id = "q13a1" name = "q13a1" value = "air-leak">
-        </div>
         
+          <label for = "q13a1"> <input type = "checkbox" id = "q13a1" name = "q13a1" value = "air-leak">My home was air-leak was tested and now it is leak-proof</label>
+
         <div class="adjust-size" id="q13a2" style="display: none;">
           <label for="q13a2">Specifics:</label>
           <input type="text" id="q13a2-input" name="q13a2-input">
         </div>  
-
-      
-        
-        <div class = "adjust-size">
-          <label for = "q13b1">I replaced my windows with energy efficient windows (e.g. double or tripple-layer)</label>
-          <input type = "checkbox" id = "q13b1" name = "q13b1" value = "energy-efficient windows">
+          <div class="adjust-size">
+          <label for = "q13b1">  <input type = "checkbox" id = "q13b1" name = "q13b1" value = "energy-efficient windows">I replaced my windows with energy efficient windows (e.g. double or tripple-layer)</label>
         </div>
+    
         
         <div class="adjust-size" id="q13b2" style="display: none;">
           <label for="q13b2">Specifics:</label>
@@ -280,8 +268,7 @@
         </div> 
         
         <div class = "adjust-size">
-          <label for = "q13c1">I installed a high efficiency furnace</label>
-          <input type = "checkbox" id = "q13c1" name = "q13c1" value = "high-efficiency furnace">
+          <label for = "q13c1"><input type = "checkbox" id = "q13c1" name = "q13c1" value = "high-efficiency furnace">I installed a high efficiency furnace</label>
         </div>
         
         <div class="adjust-size" id="q13c2" style="display: none;">
@@ -290,9 +277,8 @@
         </div>
         
         <div class = "adjust-size">
-          <label for = "q13d1">I increased the thermal insulation of my building envelop (e.g. increase R-value, foam spray under
+          <label for = "q13d1"><input type = "checkbox" id = "q13d1" name = "q13d1" value = "increase R -value">I increased the thermal insulation of my building envelop (e.g. increase R-value, foam spray under
             roof, etc.)r</label>
-          <input type = "checkbox" id = "q13d1" name = "q13d1" value = "increase R -value">
         </div>
         
         <div class="adjust-size" id="q13d2" style="display: none;">
@@ -301,8 +287,7 @@
         </div>
         
         <div class = "adjust-size">
-          <label for = "q13e1">I installed a photovoltaic system</label>
-          <input type = "checkbox" id = "q13e1" name = "q13e1" value = "photovoltaic system">
+          <label for = "q13e1"><input type = "checkbox" id = "q13e1" name = "q13e1" value = "photovoltaic system">I installed a photovoltaic system</label>
         </div>
         
         <div class="adjust-size" id="q13e2" style="display: none;">
@@ -311,9 +296,7 @@
         </div> 
       
         <div class = "adjust-size">
-        
-        <label for = "q13f1">I installed a heat pump for home heating</label>
-        <input type = "checkbox" id = "q13f1" name = "q13f1" value = "heat pump">
+        <label for = "q13f1"> <input type = "checkbox" id = "q13f1" name = "q13f1" value = "heat pump">I installed a heat pump for home heating</label>
         </div>
 
         <div class="adjust-size" id="q13f2" style="display: none;">
@@ -322,8 +305,7 @@
         </div>
 
         <div class = "adjust-size">
-          <label for = "q13g1">I installed a solar thermal collector</label>
-          <input type = "checkbox" id = "q13g1" name = "q13g1" value = "solar thermal collector">
+          <label for = "q13g1"><input type = "checkbox" id = "q13g1" name = "q13g1" value = "solar thermal collector">I installed a solar thermal collector</label>
         </div>
 
         <div class="adjust-size" id="q13g2" style="display: none;">
@@ -332,8 +314,7 @@
         </div>
 
         <div class = "adjust-size">
-          <label for = "q13h1">I installed a thermal energy storage system</label>
-          <input type = "checkbox" id = "q13h1" name = "q13h1" value = "thermal energy storage system">
+          <label for = "q13h1"><input type = "checkbox" id = "q13h1" name = "q13h1" value = "thermal energy storage system">I installed a thermal energy storage system</label>
         </div>
 
         <div class="adjust-size" id="q13h2" style="display: none;">
@@ -342,8 +323,7 @@
         </div>
 
         <div class = "adjust-size">
-          <label for = "q13i1">I have installed a green roof</label>
-          <input type = "checkbox" id = "q13i1" name = "q13i1" value = "green roof">
+          <label for = "q13i1"> <input type = "checkbox" id = "q13i1" name = "q13i1" value = "green roof">I have installed a green roof</label>
         </div>
 
         <div class="adjust-size" id="q13i2" style="display: none;">
@@ -352,8 +332,7 @@
         </div>
 
         <div class = "adjust-size">
-          <label for = "q13j1">I have installed other systems not described above</label>
-          <input type = "checkbox" id = "q13j1" name = "q13j1" value = "other systems">
+          <label for = "q13j1"><input type = "checkbox" id = "q13j1" name = "q13j1" value = "other systems">I have installed other systems not described above</label>
         </div>
 
         <div class="adjust-size" id="q13j2" style="display: none;">
@@ -395,9 +374,9 @@
         </div>
         
         
-        <div class="adjust-size">
-          <label for="consent">I accept the <a href ="#consent">terms and conditions</a></label>
-          <input type="checkbox" id="consent">
+        <div class="consent">
+          
+          <label for="consent">I accept the <a href ="#consent">terms and conditions</a><input type="checkbox" id="consent"></label>
           <button type="submit" id="button">Submit</button>
         </div>
 

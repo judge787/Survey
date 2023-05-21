@@ -460,7 +460,7 @@ function printUserInputs() {
   var q11 = document.getElementById('q11').value;
   var q12 = document.getElementById('q12').value;
 
-  var q13a1 = document.getElementById('q13a1').checked ? 'My home was air-leak was tested and now it is leak-proof' : 'nan'; 
+  var q13a1 = document.getElementById('q13a1').checked ? 'My home was air-leak was tested and now it is leak-proof' : 'nan';  //stores the value of text right after the ? character if the checkbox was checked, if it wasnt checked then it stores nan
   var q13b1 = document.getElementById('q13b1').checked ? 'I replaced my windows with energy efficient windows (e.g. double or tripple-layer)' : 'nan';
   var q13c1 = document.getElementById('q13c1').checked ? 'I installed a high efficiency furnace' : 'nan';
   var q13d1 = document.getElementById('q13d1').checked ? 'I increased the thermal insulation of my building envelop (e.g. increase R-value, foam spray under roof, etc.)r' : 'nan';
@@ -485,7 +485,7 @@ function printUserInputs() {
   q14k1 = document.getElementById('q14k1').value || "nan"; q14k2 = document.getElementById('q14k2').value || "nan"; q14k3 = document.getElementById('q14k3').value || "nan"; q14k4 = document.getElementById('q14k4').value || "nan"; q14k5 = document.getElementById('q14k5').value || "nan"; q14k6 = document.getElementById('q14k6').value || "nan"; q14k7 = document.getElementById('q14k7').value || "nan";
   q14l1 = document.getElementById('q14l1').value || "nan"; q14l2 = document.getElementById('q14l2').value || "nan"; q14l3 = document.getElementById('q14l3').value || "nan"; q14l4 = document.getElementById('q14l4').value || "nan"; q14l5 = document.getElementById('q14l5').value || "nan"; q14l6 = document.getElementById('q14l6').value || "nan"; q14l7 = document.getElementById('q14l7').value || "nan";
   
-  var q14 = [
+  var q14 = [ //store all the values in an array 
     q14a1, q14a2, q14a3, q14a4, q14a5, q14a6, q14a7,
     q14b1, q14b2, q14b3, q14b4, q14b5, q14b6, q14b7,
     q14c1, q14c2, q14c3, q14c4, q14c5, q14c6, q14c7,
@@ -513,7 +513,7 @@ function printUserInputs() {
   var q15k1 = document.getElementById('q15k1').value || "nan"; var q15k2 = document.getElementById('q15k2').value || "nan"; var q15k3 = document.getElementById('q15k3').value || "nan"; var q15k4 = document.getElementById('q15k4').value || "nan"; var q15k5 = document.getElementById('q15k5').value || "nan"; var q15k6 = document.getElementById('q15k6').value || "nan"; var q15k7 = document.getElementById('q15k7').value || "nan";
   var q15l1 = document.getElementById('q15l1').value || "nan"; var q15l2 = document.getElementById('q15l2').value || "nan"; var q15l3 = document.getElementById('q15l3').value || "nan"; var q15l4 = document.getElementById('q15l4').value || "nan"; var q15l5 = document.getElementById('q15l5').value || "nan"; var q15l6 = document.getElementById('q15l6').value || "nan"; var q15l7 = document.getElementById('q15l7').value || "nan";
  
-  var q15 = [
+  var q15 = [ //stores all the variables in the array
     q15a1, q15a2, q15a3, q15a4, q15a5, q15a6, q15a7,
     q15b1, q15b2, q15b3, q15b4, q15b5, q15b6, q15b7,
     q15c1, q15c2, q15c3, q15c4, q15c5, q15c6, q15c7,
@@ -532,7 +532,7 @@ function printUserInputs() {
 
 
 
-  function logOtherInputHandling(questionId, questionValue, otherInputValue) {
+  function logOtherInputHandling(questionId, questionValue, otherInputValue) { //function to handle other inputs replace the value of the dropdown selection value other with the text input
     
     console.log(`Before if statement: ${questionId} =`, questionValue, `\n${questionId}other =`, otherInputValue);
     if (questionValue === 'other' && otherInputValue !== '') {
