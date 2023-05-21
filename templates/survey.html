@@ -374,9 +374,9 @@
         </div>
         
         
-        <div class="consent">
-          
-          <label for="consent">I accept the <a href ="#consent">terms and conditions</a><input type="checkbox" id="consent"></label>
+        <div class="adjust-size">
+          <input type="checkbox" id="consent">
+          <label for="consent">I accept the <a href ="#consent">terms and conditions</a></label>
           <button type="submit" id="button">Submit</button>
         </div>
 
@@ -431,7 +431,7 @@
       for (let i = 1; i <= 12; i++) {
         const letter = String.fromCharCode(96 + i); // Convert i to alphabet (a, b, c, ...)
         content += `
-        <div class="adjust-size">
+        <div class="adjust-size consumption billing">
           <label for="q14${letter}1">Bill ${i}: Start YYYY</label>
           <input type="text" id="q14${letter}1" name="q14${letter}1">
           <label for="q14${letter}2">MM</label>
@@ -459,7 +459,7 @@
       for (let i = 1; i <= 12; i++) {
         const letter = String.fromCharCode(96 + i); // Convert i to alphabet (a, b, c, ...)
         content += `
-        <div class="adjust-size">
+        <div class="adjust-size consumption billing">
           <label for="q15${letter}1">Bill ${i}: Start YYYY</label>
           <input type="text" id="q15${letter}1" name="q15${letter}1">
           <label for="q15${letter}2">MM</label>

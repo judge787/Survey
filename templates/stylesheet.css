@@ -75,18 +75,21 @@ form {
   width: 97%;
 }
 
- input[type=submit], button[type=submit], #button { 
-    width: 100%;
+#button { 
+    width: 78%;
     padding: 12px;
-    margin: 8px 0;
-    display: inline-block;
+    margin: 8px 8px;
+    /* display: flex; */
+    /* display: inline; */
     border: 1px solid #ccc;
     box-sizing: border-box;
     background-color:rgb(255, 255, 255);
   }
 
-  #button:hover {
+#button:hover {
     opacity: 0.8;
+    color: white;
+    background-color: rgb(50, 17, 17);
   }
 /* used to style the input types */
 input[type=text], select {
@@ -107,19 +110,19 @@ input[type=text], select {
 }
 
 
-/* label {
+.consumption label {
   flex: 1 0 auto; 
   display: inline-flex;
   flex-direction: column;
 
-} */
-/* input, select {
+}
+.billing input, select {
   flex: 1 1 auto; 
   width: 100%; 
-} */
+}
 
-/* label, a {
+.accept label, a {
   display: inline;
-} */
+}
 
 
