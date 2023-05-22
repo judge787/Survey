@@ -375,12 +375,13 @@
         
         
         <div class="adjust-size">
-          <input type="checkbox" id="consent">
+          <input type="checkbox" id="consent" required>
           <label for="consent">I accept the <a href ="#consent">terms and conditions</a></label>
           <button type="submit" id="button">Submit</button>
+          
         </div>
 
-        <script>const consentCheckbox = document.getElementById('consent');
+        <!-- <script>const consentCheckbox = document.getElementById('consent');
           const submitButton = document.getElementById('button');
           
           submitButton.addEventListener('click', (event) => {
@@ -389,7 +390,9 @@
               consentCheckbox.style.border = '2px solid red';
               alert('Please accept the terms and conditions before submitting the form.');
             }
-          });</script>
+          });</script> -->
+
+          
 
 
   
