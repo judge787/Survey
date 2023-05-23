@@ -1,20 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Read Excel File</title>
+    <title>Two-Container Page</title>
+    <style>
+         html, body{
+            height: 100%;
+            /* margin: 0; */
+        }
+
+        .container {
+            display: flex;
+            height: 100%;
+        }
+
+        .left-container {
+            width: 180px;
+            background-color: red;
+            height: 100%;
+        }
+
+        .right-container {
+            flex: 1;
+            background-color: blue;
+        }
+    </style>
 </head>
 <body>
-  <h1>Read Excel File</h1>
-  <input type="file" id="excelFile" accept=".xls,.xlsx"/>
-  <form id="myForm">
-    <label for="name">Name:</label>
-    <input type="text" name="name" id="name" /><br />
-    <label for="email">Email:</label>
-    <input type="email" name="email" id="email" /><br />
-    <label for="age">Age:</label>
-    <input type="number" name="age" id="age" /><br />
-  </form>
-  <script src="https://unpkg.com/read-excel-file@5.x/bundle/read-excel-file.min.js"></script>
-  <script src="myscript.js"></script>
+    <div class="container">
+        <div class="left-container">
+            <div id="menu">
+                <h1>AIR</h1>
+                <h3 class="menu-link"><a href="index.html">Home</a></h3>
+                <h3 class="menu-link"><a href="facilities.html">Facilities</a></h3>
+                <h3 class="menu-link"><a href="publications.html">Publications</a></h3>
+                <h3 class="menu-link"><a href="survey.html"><u>Survey</u></a></h3>
+                <h3 class="menu-link"><a href="teaching.html">Teaching</a></h3>
+                <h3 class="menu-link"><a href="links.html">Links</a></h3>
+                <h3 class="menu-link"><a href="group.html">Group</a></h3>
+                <h3 class="menu-link"><a href="positions.html">Positions</a></h3>
+                <h3 class="menu-link"><a href="funding.html">Funding</a></h3>
+                <h3 class="menu-link"><a href="sponsors.html">Sponsors</a></h3>
+                <h3 class="menu-link"><a href="news.html">News</a></h3>
+                <h3 class="menu-link"><a href="contact.html">Contact</a></h3>
+              </div>
+            <!-- Content of the left container -->
+        </div>
+        <div class="right-container">
+            <!-- Content of the right container -->
+        </div>
+    </div>
 </body>
 </html>
