@@ -6,7 +6,10 @@
 h1{
   font-family:helvetica;
   color:black;
-  margin-top:50;
+  background-color: red;
+  /* margin-top:50; */
+  /* margin: 0;
+  padding: 0; */
 }
 
 h3{
@@ -27,9 +30,11 @@ p {
   font-family:helvetica;
   color:black;
   width:180px;
-  height:1000px;
+  height:100vh;
+  /* height:1000px; */
   float:left;
   margin-right:20;
+  background-color: red;
 }
 
 .menu-link {
@@ -54,7 +59,7 @@ h3 a {
 
 /* styling for "content" */
 
-#content{
+.content{
   padding : 0px 20px 0px 0px;
   max-width: 82%;
   float:left;
@@ -65,7 +70,6 @@ h3 a {
 form {
   display: flex;
   flex-wrap: wrap;
-  
 }
 
 .container {
@@ -110,6 +114,13 @@ input[type=text], select {
   align-items: center;
 }
 
+.wrap{
+  word-wrap:break-word;
+}
+
+.none {
+  display: none;
+}
 
 .consumption label {
   flex: 1 0 auto; 
