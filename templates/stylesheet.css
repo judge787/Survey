@@ -15,7 +15,7 @@ h1{
 }
 
 #header h1,
-.content h1 {
+.right-container h1 {
   margin-top: 50;
   /* padding: 0; */
   font-size: 2em;
@@ -33,9 +33,9 @@ p {
 }
 
 
-/* style for the navigation menu links */
+/* style for the navigation left-container links */
 
-#menu{
+#left-container{
   font-family:helvetica;
   color:black;
   width:180px;
@@ -66,9 +66,9 @@ h3 a {
     color: black !important;
   }  */
 
-/* styling for "content" */
+/* styling for "right-container" */
 
-.content{
+.right-container{
   padding : 0px 20px 0px 0px;
   max-width: 83%;
   /* min-width: 200px; */
@@ -84,7 +84,7 @@ form {
   flex-wrap: wrap;
 }
 
-.container {
+.grey-container {
   padding: 20px;
   /* margin: 0px 50px 0px 0px; */
   background-color: #f1f1f1;

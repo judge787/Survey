@@ -667,3 +667,13 @@ document.addEventListener("DOMContentLoaded", function () {
   handleOtherOption("q8", "q8other-input");
   handleOtherOption("q9", "q9other-input");
 });
+
+// Get all the div elements in the survey.html file
+const divs = document.querySelectorAll('div');
+
+// Check if the number of divs is even or odd
+if (divs.length % 2 === 0) {
+  console.log('There is an even number of divs in the survey.html file.');
+} else {
+  console.log('There is an odd number of divs in the survey.html file.');
+}
