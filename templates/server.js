@@ -1,20 +1,26 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
-const bodyParser = require('body-parser');
+const cors = require('cors');
+const path = require('path');
 
 const app = express();
-app.use(bodyParser.urlencoded({ extended: true }));
-const port = 3000;
+const port = 8080;
 
-// Middleware to parse the request body
-app.use(express.urlencoded({ extended: true })); 
+app.use(cors());
 app.use(express.json());
 
+// Serve static files from the "public" directory
+app.use(express.static(path.join(__dirname, '')));
+
+// Serve the HTML file
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '', 'index.html'));
+});
+
 // Route to handle the form submission
-app.post('/sendEmail', async (req, res) => {
+app.post('/submit-form', async (req, res) => {
   // const { name, email, message } = req.body;
   const formData = req.body;
-  const emailContent = JSON.stringify(jsonData, null, 2);
 
   try {
     // Create a transporter using your Gmail account
@@ -35,7 +41,7 @@ app.post('/sendEmail', async (req, res) => {
       attachments: [
         {
           filename: 'data.json',
-          content: emailContent
+          content: JSON.stringify(formData)
         }
       ]
     };
