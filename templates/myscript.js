@@ -702,14 +702,36 @@ form['postal-code'].addEventListener('input', function(event) {
   }
 });
 
-form['confirm-password'].addEventListener('input', function(event){
-    const regex = /^[0-9]+$/;
-    if(!regex.test(event.target.value)){
-        showError("confirm-password-error", "Please enter numbers only");
-    } else {
-        clearError("confirm-password-error");
+// form['q14j1'].addEventListener('input', function(event) {
+//   const regex = /^[0-9]+$/;
+//   if (!regex.test(event.target.value)) {
+//     showError("q14j1-error", "Please enter numbers only");
+//   } else {
+//     clearError("q14j1-error");
+//   }
+// });
+
+const regex = /^[0-9]+$/;
+
+for (let i = 1; i <= 10; i++) {
+  const inputFields = document.querySelectorAll(`#q14a${i} input[type="text"]`);
+  const errorField = document.querySelector(`#q14a${i} p.error`);
+  let hasError = false;
+
+  inputFields.forEach(input => {
+    if (!regex.test(input.value)) {
+      hasError = true;
+      showError(errorField.id, "Please enter numbers only");
     }
-});
+  });
+
+  if (hasError) {
+    document.querySelector(`#q14a${i}`).style.display = "block";
+  } else {
+    clearError(errorField.id);
+    document.querySelector(`#q14a${i}`).style.display = "none";
+  }
+}
 
 
 

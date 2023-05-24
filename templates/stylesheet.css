@@ -181,16 +181,18 @@ p {
 
 
 .error{
-	color: #af4242;
-	background-color: #fde8ec;
+	color: #ffffff;
+	background-color: #8d0720;
+  width: 100%;
 	padding: 10px;
+  text-align: center;
 	/*visibility: hidden;*/
 	display: none;
 }
 .error.display-error{
 	display:  block;
 	margin-bottom: 20px;
-	transform: translateY(-20px);
+	transform: translateY(-1px);
 }
 .success{
 	margin-bottom: 30px;
