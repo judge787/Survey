@@ -89,8 +89,16 @@ p {
   }
   
   
-  #figure{
+  .figure{
     text-align: center;
+  }
+
+  .img2{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    filter: brightness(1.1); 
+    text-align: center;
+    width: 500px;
+    /* width: 500px; */
   }
 
   .grey-container {
