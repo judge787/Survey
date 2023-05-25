@@ -580,26 +580,45 @@ function readExcelAndAutofill(event) {
       q16: q16,
      
     };
+
+    fetch('/submit-form', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(function(response) {
+      if (response.ok) {
+        alert("Form submitted successfully");
+      } else {
+        throw new Error('Form submission failed');
+      }
+    })
+    .catch(function(error) {
+      console.error(error);
+      alert("Form submission failed");
+    });
   
-     alert(JSON.stringify(formData, null, 2));
-      console.log(formData);
+    //  alert(JSON.stringify(formData, null, 2));
+    //   console.log(formData);
     
-      // Convert formData to JSON string
-      var jsonData = JSON.stringify(formData, null, 1);
+    //   // Convert formData to JSON string
+    //   var jsonData = JSON.stringify(formData, null, 1);
     
-      // Create a Blob with the JSON data and specify the MIME type as 'application/json'
-      var blob = new Blob([jsonData], { type: 'application/json' });
+    //   // Create a Blob with the JSON data and specify the MIME type as 'application/json'
+    //   var blob = new Blob([jsonData], { type: 'application/json' });
     
-      // Create an anchor element to add the download attribute
-      var downloadLink = document.createElement('a');
-      downloadLink.download = 'formData.json'; // Set the file name
-      downloadLink.href = URL.createObjectURL(blob); // Create a URL for the Blob
-      downloadLink.style.display = 'none'; // Hide the link element
+    //   // Create an anchor element to add the download attribute
+    //   var downloadLink = document.createElement('a');
+    //   downloadLink.download = 'formData.json'; // Set the file name
+    //   downloadLink.href = URL.createObjectURL(blob); // Create a URL for the Blob
+    //   downloadLink.style.display = 'none'; // Hide the link element
     
-      // Add the download link to the DOM, click it, and remove it afterward
-      document.body.appendChild(downloadLink);
-      downloadLink.click();
-      document.body.removeChild(downloadLink);
+    //   // Add the download link to the DOM, click it, and remove it afterward
+    //   document.body.appendChild(downloadLink);
+    //   downloadLink.click();
+    //   document.body.removeChild(downloadLink);
   }
   
   function handleOtherOption(selectId, otherInputId) {
