@@ -709,7 +709,167 @@ let inputq14j = ['q14j1', 'q14j2', 'q14j3', 'q14j4', 'q14j5', 'q14j6', 'q14j7'];
 let inputq14k = ['q14k1', 'q14k2', 'q14k3', 'q14k4', 'q14k5', 'q14k6', 'q14k7'];
 let inputq14l = ['q14l1', 'q14l2', 'q14l3', 'q14l4', 'q14l5', 'q14l6', 'q14l7'];
 
+for (let i = 0; i < inputq14a.length; i++) {
+  form[inputq14a[i]].addEventListener('input', function(event) {
+    const regex = /^[0-9]*$/;
+    let hasError = false;
+    for (let j = 0; j < inputq14a.length; j++) {
+      if (form[inputq14a[j]].value !== "" && !regex.test(form[inputq14a[j]].value)) {
+        hasError = true;
+        break;
+      }
+    }
+    if (hasError) {
+      showError("q14a-error", "Please enter numbers only");
+    } else {
+      clearError("q14a-error");
+    }
+  });
+}
 
+for (let i = 0; i < inputq14b.length; i++) {
+  form[inputq14b[i]].addEventListener('input', function(event) {
+    const regex = /^[0-9]*$/;
+    let hasError = false;
+    for (let j = 0; j < inputq14b.length; j++) {
+      if (form[inputq14b[j]].value !== "" && !regex.test(form[inputq14b[j]].value)) {
+        hasError = true;
+        break;
+      }
+    }
+    if (hasError) {
+      showError("q14b-error", "Please enter numbers only");
+    } else {
+      clearError("q14b-error");
+    }
+  });
+}
+
+for (let i = 0; i < inputq14c.length; i++) {
+  form[inputq14c[i]].addEventListener('input', function(event) {
+    const regex = /^[0-9]*$/;
+    let hasError = false;
+    for (let j = 0; j < inputq14c.length; j++) {
+      if (form[inputq14c[j]].value !== "" && !regex.test(form[inputq14c[j]].value)) {
+        hasError = true;
+        break;
+      }
+    }
+    if (hasError) {
+      showError("q14c-error", "Please enter numbers only");
+    } else {
+      clearError("q14c-error");
+    }
+  });
+}
+
+for (let i = 0; i < inputq14d.length; i++) {
+  form[inputq14d[i]].addEventListener('input', function(event) {
+    const regex = /^[0-9]*$/;
+    let hasError = false;
+    for (let j = 0; j < inputq14d.length; j++) {
+      if (form[inputq14d[j]].value !== "" && !regex.test(form[inputq14d[j]].value)) {
+        hasError = true;
+        break;
+      }
+    }
+    if (hasError) {
+      showError("q14d-error", "Please enter numbers only");
+    } else {
+      clearError("q14d-error");
+    }
+  });
+}
+
+for (let i = 0; i < inputq14e.length; i++) {
+  form[inputq14e[i]].addEventListener('input', function(event) {
+    const regex = /^[0-9]*$/;
+    let hasError = false;
+    for (let j = 0; j < inputq14e.length; j++) {
+      if (form[inputq14e[j]].value !== "" && !regex.test(form[inputq14e[j]].value)) {
+        hasError = true;
+        break;
+      }
+    }
+    if (hasError) {
+      showError("q14e-error", "Please enter numbers only");
+    } else {
+      clearError("q14e-error");
+    }
+  });
+}
+
+for (let i = 0; i < inputq14f.length; i++) {
+  form[inputq14f[i]].addEventListener('input', function(event) {
+    const regex = /^[0-9]*$/;
+    let hasError = false;
+    for (let j = 0; j < inputq14f.length; j++) {
+      if (form[inputq14f[j]].value !== "" && !regex.test(form[inputq14f[j]].value)) {
+        hasError = true;
+        break;
+      }
+    }
+    if (hasError) {
+      showError("q14f-error", "Please enter numbers only");
+    } else {
+      clearError("q14f-error");
+    }
+  });
+}
+
+for (let i = 0; i < inputq14g.length; i++) {
+  form[inputq14g[i]].addEventListener('input', function(event) {
+    const regex = /^[0-9]*$/;
+    let hasError = false;
+    for (let j = 0; j < inputq14g.length; j++) {
+      if (form[inputq14g[j]].value !== "" && !regex.test(form[inputq14g[j]].value)) {
+        hasError = true;
+        break;
+      }
+    }
+    if (hasError) {
+      showError("q14g-error", "Please enter numbers only");
+    } else {
+      clearError("q14g-error");
+    }
+  });
+}
+
+for (let i = 0; i < inputq14h.length; i++) {
+  form[inputq14h[i]].addEventListener('input', function(event) {
+    const regex = /^[0-9]*$/;
+    let hasError = false;
+    for (let j = 0; j < inputq14h.length; j++) {
+      if (form[inputq14h[j]].value !== "" && !regex.test(form[inputq14h[j]].value)) {
+        hasError = true;
+        break;
+      }
+    }
+    if (hasError) {
+      showError("q14h-error", "Please enter numbers only");
+    } else {
+      clearError("q14h-error");
+    }
+  });
+}
+
+for (let i = 0; i < inputq14i.length; i++) {
+  form[inputq14i[i]].addEventListener('input', function(event) {
+    const regex = /^[0-9]*$/;
+    let hasError = false;
+    for (let j = 0; j < inputq14i.length; j++) {
+      if (form[inputq14i[j]].value !== "" && !regex.test(form[inputq14i[j]].value)) {
+        hasError = true;
+        break;
+      }
+    }
+    if (hasError) {
+      showError("q14i-error", "Please enter numbers only");
+    } else {
+      clearError("q14i-error");
+    }
+  });
+}
 
 for (let i = 0; i < inputq14j.length; i++) {
   form[inputq14j[i]].addEventListener('input', function(event) {
@@ -728,6 +888,61 @@ for (let i = 0; i < inputq14j.length; i++) {
     }
   });
 }
+
+for (let i = 0; i < inputq14k.length; i++) {
+  form[inputq14k[i]].addEventListener('input', function(event) {
+    const regex = /^[0-9]*$/;
+    let hasError = false;
+    for (let j = 0; j < inputq14k.length; j++) {
+      if (form[inputq14k[j]].value !== "" && !regex.test(form[inputq14k[j]].value)) {
+        hasError = true;
+        break;
+      }
+    }
+    if (hasError) {
+      showError("q14k-error", "Please enter numbers only");
+    } else {
+      clearError("q14k-error");
+    }
+  });
+}
+
+for (let i = 0; i < inputq14l.length; i++) {
+  form[inputq14l[i]].addEventListener('input', function(event) {
+    const regex = /^[0-9]*$/;
+    let hasError = false;
+    for (let j = 0; j < inputq14l.length; j++) {
+      if (form[inputq14l[j]].value !== "" && !regex.test(form[inputq14l[j]].value)) {
+        hasError = true;
+        break;
+      }
+    }
+    if (hasError) {
+      showError("q14l-error", "Please enter numbers only");
+    } else {
+      clearError("q14l-error");
+    }
+  });
+}
+
+
+// for (let i = 0; i < inputq14j.length; i++) {
+//   form[inputq14j[i]].addEventListener('input', function(event) {
+//     const regex = /^[0-9]*$/;
+//     let hasError = false;
+//     for (let j = 0; j < inputq14j.length; j++) {
+//       if (form[inputq14j[j]].value !== "" && !regex.test(form[inputq14j[j]].value)) {
+//         hasError = true;
+//         break;
+//       }
+//     }
+//     if (hasError) {
+//       showError("q14j-error", "Please enter numbers only");
+//     } else {
+//       clearError("q14j-error");
+//     }
+//   });
+// }
 
 
 // form.onsubmit = function(event){
