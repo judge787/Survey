@@ -708,6 +708,18 @@ let inputq14i = ['q14i1', 'q14i2', 'q14i3', 'q14i4', 'q14i5', 'q14i6', 'q14i7'];
 let inputq14j = ['q14j1', 'q14j2', 'q14j3', 'q14j4', 'q14j5', 'q14j6', 'q14j7'];
 let inputq14k = ['q14k1', 'q14k2', 'q14k3', 'q14k4', 'q14k5', 'q14k6', 'q14k7'];
 let inputq14l = ['q14l1', 'q14l2', 'q14l3', 'q14l4', 'q14l5', 'q14l6', 'q14l7'];
+let inputq15a = ['q15a1', 'q15a2', 'q15a3', 'q15a4', 'q15a5', 'q15a6', 'q15a7'];
+let inputq15b = ['q15b1', 'q15b2', 'q15b3', 'q15b4', 'q15b5', 'q15b6', 'q15b7'];
+let inputq15c = ['q15c1', 'q15c2', 'q15c3', 'q15c4', 'q15c5', 'q15c6', 'q15c7'];
+let inputq15d = ['q15d1', 'q15d2', 'q15d3', 'q15d4', 'q15d5', 'q15d6', 'q15d7'];
+let inputq15e = ['q15e1', 'q15e2', 'q15e3', 'q15e4', 'q15e5', 'q15e6', 'q15e7'];
+let inputq15f = ['q15f1', 'q15f2', 'q15f3', 'q15f4', 'q15f5', 'q15f6', 'q15f7'];
+let inputq15g = ['q15g1', 'q15g2', 'q15g3', 'q15g4', 'q15g5', 'q15g6', 'q15g7'];
+let inputq15h = ['q15h1', 'q15h2', 'q15h3', 'q15h4', 'q15h5', 'q15h6', 'q15h7'];
+let inputq15i = ['q15i1', 'q15i2', 'q15i3', 'q15i4', 'q15i5', 'q15i6', 'q15i7'];
+let inputq15j = ['q15j1', 'q15j2', 'q15j3', 'q15j4', 'q15j5', 'q15j6', 'q15j7'];
+let inputq15k = ['q15k1', 'q15k2', 'q15k3', 'q15k4', 'q15k5', 'q15k6', 'q15k7'];
+let inputq15l = ['q15l1', 'q15l2', 'q15l3', 'q15l4', 'q15l5', 'q15l6', 'q15l7'];
 
 for (let i = 0; i < inputq14a.length; i++) {
   form[inputq14a[i]].addEventListener('input', function(event) {
@@ -924,6 +936,225 @@ for (let i = 0; i < inputq14l.length; i++) {
     }
   });
 }
+
+for (let i = 0; i < inputq15a.length; i++) {
+  form[inputq15a[i]].addEventListener('input', function(event) {
+    const regex = /^[0-9]*$/;
+    let hasError = false;
+    for (let j = 0; j < inputq15a.length; j++) {
+      if (form[inputq15a[j]].value !== "" && !regex.test(form[inputq15a[j]].value)) {
+        hasError = true;
+        break;
+      }
+    }
+    if (hasError) {
+      showError("q15a-error", "Please enter numbers only");
+    } else {
+      clearError("q15a-error");
+    }
+  });
+}
+
+for (let i = 0; i < inputq15b.length; i++) {
+  form[inputq15b[i]].addEventListener('input', function(event) {
+    const regex = /^[0-9]*$/;
+    let hasError = false;
+    for (let j = 0; j < inputq15b.length; j++) {
+      if (form[inputq15b[j]].value !== "" && !regex.test(form[inputq15b[j]].value)) {
+        hasError = true;
+        break;
+      }
+    }
+    if (hasError) {
+      showError("q15b-error", "Please enter numbers only");
+    } else {
+      clearError("q15b-error");
+    }
+  });
+}
+
+for (let i = 0; i < inputq15c.length; i++) {
+  form[inputq15c[i]].addEventListener('input', function(event) {
+    const regex = /^[0-9]*$/;
+    let hasError = false;
+    for (let j = 0; j < inputq15c.length; j++) {
+      if (form[inputq15c[j]].value !== "" && !regex.test(form[inputq15c[j]].value)) {
+        hasError = true;
+        break;
+      }
+    }
+    if (hasError) {
+      showError("q15c-error", "Please enter numbers only");
+    } else {
+      clearError("q15c-error");
+    }
+  });
+}
+
+for (let i = 0; i < inputq15d.length; i++) {
+  form[inputq15d[i]].addEventListener('input', function(event) {
+    const regex = /^[0-9]*$/;
+    let hasError = false;
+    for (let j = 0; j < inputq15d.length; j++) {
+      if (form[inputq15d[j]].value !== "" && !regex.test(form[inputq15d[j]].value)) {
+        hasError = true;
+        break;
+      }
+    }
+    if (hasError) {
+      showError("q15d-error", "Please enter numbers only");
+    } else {
+      clearError("q15d-error");
+    }
+  });
+}
+
+for (let i = 0; i < inputq15e.length; i++) {
+  form[inputq15e[i]].addEventListener('input', function(event) {
+    const regex = /^[0-9]*$/;
+    let hasError = false;
+    for (let j = 0; j < inputq15e.length; j++) {
+      if (form[inputq15e[j]].value !== "" && !regex.test(form[inputq15e[j]].value)) {
+        hasError = true;
+        break;
+      }
+    }
+    if (hasError) {
+      showError("q15e-error", "Please enter numbers only");
+    } else {
+      clearError("q15e-error");
+    }
+  });
+}
+
+for (let i = 0; i < inputq15f.length; i++) {
+  form[inputq15f[i]].addEventListener('input', function(event) {
+    const regex = /^[0-9]*$/;
+    let hasError = false;
+    for (let j = 0; j < inputq15f.length; j++) {
+      if (form[inputq15f[j]].value !== "" && !regex.test(form[inputq15f[j]].value)) {
+        hasError = true;
+        break;
+      }
+    }
+    if (hasError) {
+      showError("q15f-error", "Please enter numbers only");
+    } else {
+      clearError("q15f-error");
+    }
+  });
+}
+
+for (let i = 0; i < inputq15g.length; i++) {
+  form[inputq15g[i]].addEventListener('input', function(event) {
+    const regex = /^[0-9]*$/;
+    let hasError = false;
+    for (let j = 0; j < inputq15g.length; j++) {
+      if (form[inputq15g[j]].value !== "" && !regex.test(form[inputq15g[j]].value)) {
+        hasError = true;
+        break;
+      }
+    }
+    if (hasError) {
+      showError("q15g-error", "Please enter numbers only");
+    } else {
+      clearError("q15g-error");
+    }
+  });
+}
+
+for (let i = 0; i < inputq15h.length; i++) {
+  form[inputq15h[i]].addEventListener('input', function(event) {
+    const regex = /^[0-9]*$/;
+    let hasError = false;
+    for (let j = 0; j < inputq15h.length; j++) {
+      if (form[inputq15h[j]].value !== "" && !regex.test(form[inputq15h[j]].value)) {
+        hasError = true;
+        break;
+      }
+    }
+    if (hasError) {
+      showError("q15h-error", "Please enter numbers only");
+    } else {
+      clearError("q15h-error");
+    }
+  });
+}
+
+for (let i = 0; i < inputq15i.length; i++) {
+  form[inputq15i[i]].addEventListener('input', function(event) {
+    const regex = /^[0-9]*$/;
+    let hasError = false;
+    for (let j = 0; j < inputq15i.length; j++) {
+      if (form[inputq15i[j]].value !== "" && !regex.test(form[inputq15i[j]].value)) {
+        hasError = true;
+        break;
+      }
+    }
+    if (hasError) {
+      showError("q15i-error", "Please enter numbers only");
+    } else {
+      clearError("q15i-error");
+    }
+  });
+}
+
+for (let i = 0; i < inputq15j.length; i++) {
+  form[inputq15j[i]].addEventListener('input', function(event) {
+    const regex = /^[0-9]*$/;
+    let hasError = false;
+    for (let j = 0; j < inputq15j.length; j++) {
+      if (form[inputq15j[j]].value !== "" && !regex.test(form[inputq15j[j]].value)) {
+        hasError = true;
+        break;
+      }
+    }
+    if (hasError) {
+      showError("q15j-error", "Please enter numbers only");
+    } else {
+      clearError("q15j-error");
+    }
+  });
+}
+
+for (let i = 0; i < inputq15k.length; i++) {
+  form[inputq15k[i]].addEventListener('input', function(event) {
+    const regex = /^[0-9]*$/;
+    let hasError = false;
+    for (let j = 0; j < inputq15k.length; j++) {
+      if (form[inputq15k[j]].value !== "" && !regex.test(form[inputq15k[j]].value)) {
+        hasError = true;
+        break;
+      }
+    }
+    if (hasError) {
+      showError("q15k-error", "Please enter numbers only");
+    } else {
+      clearError("q15k-error");
+    }
+  });
+}
+
+for (let i = 0; i < inputq15l.length; i++) {
+  form[inputq15l[i]].addEventListener('input', function(event) {
+    const regex = /^[0-9]*$/;
+    let hasError = false;
+    for (let j = 0; j < inputq15l.length; j++) {
+      if (form[inputq15l[j]].value !== "" && !regex.test(form[inputq15l[j]].value)) {
+        hasError = true;
+        break;
+      }
+    }
+    if (hasError) {
+      showError("q15l-error", "Please enter numbers only");
+    } else {
+      clearError("q15l-error");
+    }
+  });
+}
+
+
+
 
 
 // for (let i = 0; i < inputq14j.length; i++) {
