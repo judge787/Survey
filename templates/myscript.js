@@ -732,7 +732,7 @@ for (let i = 0; i < inputq14a.length; i++) {
       }
     }
     if (hasError) {
-      showError("q14a-error", "Please enter numbers only");
+      showError("q14a-error", "Invalid Input, please ensure all fields in Bill 01 are only numbers");
     } else {
       clearError("q14a-error");
     }
@@ -750,7 +750,7 @@ for (let i = 0; i < inputq14b.length; i++) {
       }
     }
     if (hasError) {
-      showError("q14b-error", "Please enter numbers only");
+      showError("q14b-error", "Invalid Input, please ensure all fields in Bill 02 are only numbers");
     } else {
       clearError("q14b-error");
     }
@@ -768,7 +768,7 @@ for (let i = 0; i < inputq14c.length; i++) {
       }
     }
     if (hasError) {
-      showError("q14c-error", "Please enter numbers only");
+      showError("q14c-error", "Invalid Input, please ensure all fields in Bill 03 are only numbers");
     } else {
       clearError("q14c-error");
     }
@@ -786,7 +786,7 @@ for (let i = 0; i < inputq14d.length; i++) {
       }
     }
     if (hasError) {
-      showError("q14d-error", "Please enter numbers only");
+      showError("q14d-error", "Invalid Input, please ensure all fields in Bill 04 are only numbers");
     } else {
       clearError("q14d-error");
     }
@@ -804,7 +804,7 @@ for (let i = 0; i < inputq14e.length; i++) {
       }
     }
     if (hasError) {
-      showError("q14e-error", "Please enter numbers only");
+      showError("q14e-error", "Invalid Input, please ensure all fields in Bill 05 are only numbers");
     } else {
       clearError("q14e-error");
     }
@@ -822,7 +822,7 @@ for (let i = 0; i < inputq14f.length; i++) {
       }
     }
     if (hasError) {
-      showError("q14f-error", "Please enter numbers only");
+      showError("q14f-error", "Invalid Input, please ensure all fields in Bill 06 are only numbers");
     } else {
       clearError("q14f-error");
     }
@@ -840,7 +840,7 @@ for (let i = 0; i < inputq14g.length; i++) {
       }
     }
     if (hasError) {
-      showError("q14g-error", "Please enter numbers only");
+      showError("q14g-error", "Invalid Input, please ensure all fields in Bill 07 are only numbers");
     } else {
       clearError("q14g-error");
     }
@@ -858,7 +858,7 @@ for (let i = 0; i < inputq14h.length; i++) {
       }
     }
     if (hasError) {
-      showError("q14h-error", "Please enter numbers only");
+      showError("q14h-error", "Invalid Input, please ensure all fields in Bill 08 are only numbers");
     } else {
       clearError("q14h-error");
     }
@@ -876,7 +876,7 @@ for (let i = 0; i < inputq14i.length; i++) {
       }
     }
     if (hasError) {
-      showError("q14i-error", "Please enter numbers only");
+      showError("q14i-error", "Invalid Input, please ensure all fields in Bill 09 are only numbers");
     } else {
       clearError("q14i-error");
     }
@@ -894,7 +894,7 @@ for (let i = 0; i < inputq14j.length; i++) {
       }
     }
     if (hasError) {
-      showError("q14j-error", "Please enter numbers only");
+      showError("q14j-error", "Invalid Input, please ensure all fields in Bill 10 are only numbers");
     } else {
       clearError("q14j-error");
     }
@@ -912,7 +912,7 @@ for (let i = 0; i < inputq14k.length; i++) {
       }
     }
     if (hasError) {
-      showError("q14k-error", "Please enter numbers only");
+      showError("q14k-error", "Invalid Input, please ensure all fields in Bill 11 are only numbers");
     } else {
       clearError("q14k-error");
     }
@@ -930,7 +930,7 @@ for (let i = 0; i < inputq14l.length; i++) {
       }
     }
     if (hasError) {
-      showError("q14l-error", "Please enter numbers only");
+      showError("q14l-error", "Invalid Input, please ensure all fields in Bill 12 are only numbers");
     } else {
       clearError("q14l-error");
     }
@@ -948,7 +948,7 @@ for (let i = 0; i < inputq15a.length; i++) {
       }
     }
     if (hasError) {
-      showError("q15a-error", "Please enter numbers only");
+      showError("q15a-error", "Invalid Input, please ensure all fields in Bill 01 are only numbers");
     } else {
       clearError("q15a-error");
     }
@@ -966,7 +966,7 @@ for (let i = 0; i < inputq15b.length; i++) {
       }
     }
     if (hasError) {
-      showError("q15b-error", "Please enter numbers only");
+      showError("q15b-error", "Invalid Input, please ensure all fields in Bill 02 are only numbers");
     } else {
       clearError("q15b-error");
     }
@@ -984,7 +984,7 @@ for (let i = 0; i < inputq15c.length; i++) {
       }
     }
     if (hasError) {
-      showError("q15c-error", "Please enter numbers only");
+      showError("q15c-error", "Invalid Input, please ensure all fields in Bill 03 are only numbers");
     } else {
       clearError("q15c-error");
     }
@@ -1002,7 +1002,7 @@ for (let i = 0; i < inputq15d.length; i++) {
       }
     }
     if (hasError) {
-      showError("q15d-error", "Please enter numbers only");
+      showError("q15d-error", "Invalid Input, please ensure all fields in Bill 04 are only numbers");
     } else {
       clearError("q15d-error");
     }
@@ -1020,7 +1020,7 @@ for (let i = 0; i < inputq15e.length; i++) {
       }
     }
     if (hasError) {
-      showError("q15e-error", "Please enter numbers only");
+      showError("q15e-error", "Invalid Input, please ensure all fields in Bill 05 are only numbers");
     } else {
       clearError("q15e-error");
     }
@@ -1038,7 +1038,7 @@ for (let i = 0; i < inputq15f.length; i++) {
       }
     }
     if (hasError) {
-      showError("q15f-error", "Please enter numbers only");
+      showError("q15f-error", "Invalid Input, please ensure all fields in Bill 06 are only numbers");
     } else {
       clearError("q15f-error");
     }
@@ -1056,7 +1056,7 @@ for (let i = 0; i < inputq15g.length; i++) {
       }
     }
     if (hasError) {
-      showError("q15g-error", "Please enter numbers only");
+      showError("q15g-error", "Invalid Input, please ensure all fields in Bill 07 are only numbers");
     } else {
       clearError("q15g-error");
     }
@@ -1074,7 +1074,7 @@ for (let i = 0; i < inputq15h.length; i++) {
       }
     }
     if (hasError) {
-      showError("q15h-error", "Please enter numbers only");
+      showError("q15h-error", "Invalid Input, please ensure all fields in Bill 08 are only numbers");
     } else {
       clearError("q15h-error");
     }
@@ -1092,7 +1092,7 @@ for (let i = 0; i < inputq15i.length; i++) {
       }
     }
     if (hasError) {
-      showError("q15i-error", "Please enter numbers only");
+      showError("q15i-error", "Invalid Input, please ensure all fields in Bill 09 are only numbers");
     } else {
       clearError("q15i-error");
     }
@@ -1110,7 +1110,7 @@ for (let i = 0; i < inputq15j.length; i++) {
       }
     }
     if (hasError) {
-      showError("q15j-error", "Please enter numbers only");
+      showError("q15j-error", "Invalid Input, please ensure all fields in Bill 10 are only numbers");
     } else {
       clearError("q15j-error");
     }
@@ -1128,7 +1128,7 @@ for (let i = 0; i < inputq15k.length; i++) {
       }
     }
     if (hasError) {
-      showError("q15k-error", "Please enter numbers only");
+      showError("q15k-error", "Invalid Input, please ensure all fields in Bill 11 are only numbers");
     } else {
       clearError("q15k-error");
     }
@@ -1146,7 +1146,7 @@ for (let i = 0; i < inputq15l.length; i++) {
       }
     }
     if (hasError) {
-      showError("q15l-error", "Please enter numbers only");
+      showError("q15l-error", "Invalid Input, please ensure all fields in Bill 12 are only numbers");
     } else {
       clearError("q15l-error");
     }
