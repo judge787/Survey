@@ -681,45 +681,56 @@ function readExcelAndAutofill(event) {
 // display error message
 
 
+
+
+
+
+
 function showError(errorElement, errorMessage){
-    document.querySelector("."+errorElement).classList.add("display-error");
-    document.querySelector("."+errorElement).innerHTML = errorMessage;
+  document.querySelector("."+errorElement).classList.add("display-error");
+  document.querySelector("."+errorElement).innerHTML = errorMessage;
 }
 
 function clearError(errorElement){
-    document.querySelector("."+errorElement).classList.remove("display-error");
+  document.querySelector("."+errorElement).classList.remove("display-error");
 }
 
 let form = document.forms['survey'];
-
-
-form['postal-code'].addEventListener('input', function(event) {
-  const regex = /^[0-9]+$/;
-  if (!regex.test(event.target.value)) {
-    showError("postal-code-error", "Please enter numbers only");
-  } else {
-    clearError("postal-code-error");
-  }
-});
-
-form['q14j1'].addEventListener('input', function(event) {
-  const regex = /^[0-9]+$/;
-  if (!regex.test(event.target.value)) {
-    showError("q14j1-error", "Please enter numbers only");
-  } else {
-    clearError("q14j1-error");
-  }
-});
+let inputq14a = ['q14a1', 'q14a2', 'q14a3', 'q14a4', 'q14a5', 'q14a6', 'q14a7'];
+let inputq14b = ['q14b1', 'q14b2', 'q14b3', 'q14b4', 'q14b5', 'q14b6', 'q14b7'];
+let inputq14c = ['q14c1', 'q14c2', 'q14c3', 'q14c4', 'q14c5', 'q14c6', 'q14c7'];
+let inputq14d = ['q14d1', 'q14d2', 'q14d3', 'q14d4', 'q14d5', 'q14d6', 'q14d7'];
+let inputq14e = ['q14e1', 'q14e2', 'q14e3', 'q14e4', 'q14e5', 'q14e6', 'q14e7'];
+let inputq14f = ['q14f1', 'q14f2', 'q14f3', 'q14f4', 'q14f5', 'q14f6', 'q14f7'];
+let inputq14g = ['q14g1', 'q14g2', 'q14g3', 'q14g4', 'q14g5', 'q14g6', 'q14g7'];
+let inputq14h = ['q14h1', 'q14h2', 'q14h3', 'q14h4', 'q14h5', 'q14h6', 'q14h7'];
+let inputq14i = ['q14i1', 'q14i2', 'q14i3', 'q14i4', 'q14i5', 'q14i6', 'q14i7'];
+let inputq14j = ['q14j1', 'q14j2', 'q14j3', 'q14j4', 'q14j5', 'q14j6', 'q14j7'];
+let inputq14k = ['q14k1', 'q14k2', 'q14k3', 'q14k4', 'q14k5', 'q14k6', 'q14k7'];
+let inputq14l = ['q14l1', 'q14l2', 'q14l3', 'q14l4', 'q14l5', 'q14l6', 'q14l7'];
 
 
 
-
-
-form.onsubmit = function(event){
-
-   
-
-    document.querySelector(".success").classList.add("display-success");
-    document.querySelector(".success").innerHTML = "You have successfully signed up!";
-
+for (let i = 0; i < inputq14j.length; i++) {
+  form[inputq14j[i]].addEventListener('input', function(event) {
+    const regex = /^[0-9]*$/;
+    let hasError = false;
+    for (let j = 0; j < inputq14j.length; j++) {
+      if (form[inputq14j[j]].value !== "" && !regex.test(form[inputq14j[j]].value)) {
+        hasError = true;
+        break;
+      }
+    }
+    if (hasError) {
+      showError("q14j-error", "Please enter numbers only");
+    } else {
+      clearError("q14j-error");
+    }
+  });
 }
+
+
+// form.onsubmit = function(event){
+//   document.querySelector(".success").classList.add("display-success");
+//   document.querySelector(".success").innerHTML = "You have successfully signed up!";
+// }
