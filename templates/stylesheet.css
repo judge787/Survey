@@ -181,10 +181,10 @@ p {
 
 
 .error{
-	color: #ffffff;
-	background-color: #8d0720;
+	color: #ba0c2f;
+	background-color:  #f1f1f1;
   width: 100%;
-	padding: 10px;
+	padding: 0px; 
   text-align: center;
 	/*visibility: hidden;*/
 	display: none;

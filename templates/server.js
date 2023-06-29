@@ -6,6 +6,10 @@ const path = require('path');
 const app = express();
 const port = 8080;
 
+const fs = require('fs');
+const password = fs.readFileSync('password.txt', 'utf8').split('\n')[0];
+// console.log(password);
+
 app.use(cors());
 app.use(express.json());
 
@@ -27,15 +31,15 @@ app.post('/submit-form', async (req, res) => {
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: 'luke6799@gmail.com',
-        pass: 'kjivqvarqlwwyudc',
+        user: 'jashanjudge2002@gmail.com',
+        pass: 'xfkvhqyelzvlynrg',
       },
     });
 
     // Compose the email
     const mailOptions = {
-      from: 'luke6799@gmail.com',
-      to: 'kjdakdkkdjjasndnajn@gmail.com',
+      from: 'jashanjudge2002@gmail.com',
+      to: 'jashanjudge87@gmail.com',
       subject: 'Form Submission',
       // text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
       attachments: [
